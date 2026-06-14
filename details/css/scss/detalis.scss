@@ -1,0 +1,364 @@
+@use '../../../global/css/scss/shared/index' as *;
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        radial-gradient(68% 58% at 50% 50%, #c81e3a 0%, #a51d35 16%, #0a0a0a 100%);
+}
+
+.buut {
+    background-color: var(--mainColor);
+    color: var(--textColor-second);
+    border: none;
+    display: block;
+    margin: auto;
+
+    &:hover {
+        color: var(--textColor-second);
+    }
+}
+
+#Header {
+    height: 100dvh;
+    position: relative;
+    overflow: hidden;
+
+    img {
+        @include area(100%, 100%);
+        @include position($p: absolute, $t: 0, $l: 0, $z: 1);
+    }
+
+    &::before,
+    &::after {
+        @include createEle(100%, 100%);
+        @include position($p: absolute, $t: 0, $l: 0, $z: 2);
+    }
+
+    &::before {
+        background: linear-gradient(to top, rgba(10, 10, 15, 1) 0%, transparent 40%);
+    }
+
+    &::after {
+        background: linear-gradient(to right, rgba(10, 10, 15, 0.95) 0%, rgba(10, 10, 15, 0.6) 50%, rgba(10, 10, 15, 0.15) 100%);
+    }
+
+    .container-fluid {
+        .content {
+            color: var(--textColor-second);
+
+            .row {
+                .poster {
+                    .item {
+                        width: 200px;
+                        height: 300px;
+                        position: relative;
+                        border-radius: 10px;
+                        overflow: hidden;
+                        margin: auto;
+
+                        @include responsive(350) {
+                            width: 150px;
+                            height: 210px;
+                        }
+
+                        @include responsive(850) {
+                            width: 180px;
+                            height: 250px;
+                        }
+
+                        &::before {
+                            @include createEle(80px, 500%);
+                            @include position($p: absolute, $t: 0, $l: 0, $z: 3);
+                            background-color: rgba(255, 255, 255, .5);
+                            transform: rotate(30deg) translateX(-600%);
+                        }
+
+                        &:hover {
+                            &::before {
+                                transform: rotate(30deg) translateX(0);
+                                transition: all 1s;
+                            }
+                        }
+                    }
+                }
+
+                .info_poster {
+                    .item {
+                        .status {
+                            ul {
+                                i {
+                                    color: yellow;
+
+                                    @include responsive(350) {
+                                        font-size: 12px;
+                                    }
+
+                                    @include responsive(650) {
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+
+                            .date {
+                                @include responsive(350) {
+                                    font-size: 12px;
+                                }
+
+                                @include responsive(650) {
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+
+                        h2 {
+                            color: var(--mainColor);
+                            font-weight: 700;
+
+                            @include responsive(350) {
+                                font-size: 20px;
+                            }
+
+                            @include responsive(650) {
+                                font-size: 25px;
+                            }
+                        }
+
+                        .tagline {
+                            font-family: "Cormorant Garamond", serif;
+                            font-style: italic;
+                            color: #c0bebe;
+                            font-size: 18px;
+
+                            @include responsive(350) {
+                                font-size: 12px;
+                            }
+
+                            @include responsive(650) {
+                                font-size: 15px;
+                            }
+                        }
+
+                        .buttons {
+                            button {
+                                background-color: var(--mainColor);
+                                color: var(--textColor-second);
+                                border: none;
+
+                                @include responsive(350) {
+                                    font-size: 12px;
+                                }
+
+                                @include responsive(650) {
+                                    font-size: 14px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#MovieData {
+    .head {
+        color: var(--textColor-second);
+    }
+
+    .part1 {
+        .overview {
+            background-color: #0F0F14;
+            border-radius: 10px;
+
+            .body {
+                p {
+                    color: #8B8787;
+                    width: 90%;
+
+                    @include responsive(350) {
+                        font-size: 13px;
+                    }
+
+                    @include responsive(850) {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+
+    .part2 {
+        &>.item {
+            background-color: #0F0F14;
+            border-radius: 10px;
+            height: 270px;
+
+            .body {
+                overflow-x: auto;
+                overflow-y: hidden;
+                height: auto;
+                padding-bottom: 8px;
+                scrollbar-width: none;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                .info {
+                    .castData {
+                        width: max-content;
+
+                        .item {
+                            width: 110px;
+
+                            .profile {
+                                display: block;
+                                background-color: rgba(255, 255, 255, 0.03);
+                                border: 0.5px solid rgba(255, 255, 255, 0.07);
+                                border-radius: 10px;
+                                overflow: hidden;
+                                transition: border-color 0.15s;
+
+                                &:hover {
+                                    border-color: rgba(255, 255, 255, 0.16);
+                                }
+
+                                .logo {
+                                    background-color: #251A10;
+                                    @include area(100%, 70px);
+                                    border-radius: 0;
+                                    color: #ED9320;
+                                    font-weight: 500;
+                                    font-size: 22px;
+                                    margin: 0;
+                                    border-bottom: 0.5px solid rgba(255, 255, 255, 0.06);
+                                }
+
+                                .cont {
+                                    padding: 8px 8px 10px;
+
+                                    h4 {
+                                        font-size: 11px;
+                                        font-weight: 500;
+                                        color: rgba(255, 255, 255, 0.8);
+                                        margin-bottom: 2px;
+                                        max-width: 80px;
+                                    }
+
+                                    h5 {
+                                        font-size: 10px;
+                                        font-weight: 400;
+                                        color: rgba(255, 255, 255, 0.3);
+                                        font-style: italic;
+                                        margin: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .part3 {
+        &>.item {
+            background-color: #0F0F14;
+            border-radius: 10px;
+
+            .head {
+                span {
+                    background-color: var(--mainColor);
+                    height: 40px;
+                    width: 4px;
+                    display: block;
+                    border-radius: 5px;
+                }
+
+                h2 {
+                    margin-bottom: 0;
+                    font-size: 30px;
+                    color: var(--textColor-second);
+                }
+            }
+
+            .part1 {
+                .item {
+                    background-color: rgba(255, 255, 255, 0.03);
+                    border-radius: 10px;
+
+                    .frameVideo {
+                        height: 285px;
+                        border-radius: 10px;
+                        overflow: hidden;
+                        position: relative;
+
+                        .video {
+                            @include position($p: absolute, $t: 0, $l: 0, $z: 3);
+                            @include area(100%, 100%);
+                            cursor: pointer;
+
+                            &.hide {
+                                display: none;
+                            }
+
+                            #playBtn {
+                                @include position($p: absolute, $t: 0, $l: 0, $z: 4);
+                                @include area(100%, 100%);
+                                color: var(--mainColor);
+
+                                i {
+                                    font-size: 50px;
+                                }
+                            }
+
+                            #thumb {
+                                @include area(100%, 100%);
+
+                                @include responsive(350) {
+                                    img {
+                                        height: 100%;
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            .part2 {
+                .item {
+                    background-color: rgba(255, 255, 255, 0.03);
+                    height: max-content;
+
+                    .info {
+                        background-color: #0F0F14;
+                        border-radius: 10px;
+
+                        h5 {
+                            color: var(--mainColor);
+                            margin-bottom: 0;
+                            font-size: 16px;
+                        }
+
+                        p {
+                            color: #ED9320;
+                            margin-bottom: 0;
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

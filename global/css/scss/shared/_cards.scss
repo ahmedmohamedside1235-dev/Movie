@@ -1,0 +1,155 @@
+@use "./mixins" as *;
+@use "./root" as *;
+
+.cardsMovies {
+    margin-block: 90px;
+
+    .content {
+        .moviesSwiper {
+            .swiper-slide {
+                position: relative;
+                border-radius: 5px;
+                overflow: hidden;
+                height: 300px;
+
+                img {
+                    transition: all .5s;
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                }
+
+                .body {
+                    @include position($p : absolute, $t : 0, $l : 0);
+                    background-color: rgb(0, 0, 0, .5);
+                    width: 100%;
+                    opacity: 0;
+                    transition: all 0.3s;
+
+                    .layout {
+                        color: var(--textColor-second);
+                        width: 100%;
+                        transform: translateY(100%);
+
+                        ul.type {
+                            li {
+                                background-color: rgb(47, 37, 4);
+                                color: var(--textColor-second);
+                                font-size: 11px;
+                                padding: 5px;
+                                border-radius: 5px;
+
+                                @include responsive (350) {
+                                    font-size: 13px;
+                                }
+
+                                @include responsive (450) {
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+
+                        h6 {
+                            font-size: 15px;
+                            font-weight: 600;
+                            color: var(--textColor-second);
+
+                            @include responsive (450) {
+                                font-size: 14px;
+                            }
+                        }
+
+                        ul.cat {
+                            li {
+                                color: #AAAAA9;
+                                font-size: 12px;
+
+                                @include responsive(350) {
+                                    font-weight: 700;
+                                    font-size: 11px;
+                                }
+                            }
+                        }
+
+
+                        .back_drop {
+                            .add_cart {
+                                position: relative;
+
+                                .text {
+                                    @include position($p : absolute, $t: -50px, $l: 0, $z: 4);
+                                    font-size: 15px;
+                                    border-radius: 5px;
+                                    background-color: var(--textColor-first);
+                                    width: max-content;
+                                    padding: 8px;
+                                    opacity: 0;
+                                    transition-duration: .2s;
+                                }
+
+                                img {
+                                    width: 40px;
+                                    height: 40px;
+                                    cursor: pointer;
+                                    transition: all .5s;
+
+                                    &.add {
+                                        transform: translateX(0);
+                                    }
+
+                                    &.add.hide {
+                                        transform: translateX(-300%);
+                                    }
+
+                                    &.delete {
+                                        transform: translateX(-300%);
+                                    }
+
+                                    &.delete.show {
+                                        transform: translateX(0);
+                                    }
+
+                                    @include responsive(450) {
+                                        width: 30px;
+                                        height: 30px;
+                                    }
+
+                                }
+
+                                &:hover {
+                                    .text {
+                                        opacity: 1;
+                                    }
+                                }
+
+                            }
+
+                            .btn {
+                                border: none;
+
+                                @include responsive(450) {
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &:hover {
+                    img {
+                        transform: scale(1.2);
+                    }
+
+                    .body {
+                        opacity: 1;
+
+                        .layout {
+                            transform: translateY(0);
+                            transition: all .5s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

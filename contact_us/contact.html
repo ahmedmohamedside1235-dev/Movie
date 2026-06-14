@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="../global/css/plugins/bootstrap.css">
+    <link rel="stylesheet" href="../global/css/all.min.css">
+    <title>Contact Us</title>
+</head>
+
+<body>
+    <div id="Contact" class="py-5">
+        <div class="stars-bg" id="starsContainer"></div>
+        <div class="container">
+            <div class="head text-center mb-5">
+                <h2 class="mb-2">Contact <span class="color">Us</span></h2>
+                <p class="mb-2">Got a question, a suggestion, or just want to talk movies?</p>
+                <p class="mb-2">We're all ears</p>
+            </div>
+            <div class="body px-4 py-5">
+                <form id="form">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="item mb-4 mb-md-0">
+                                <div class="input-data">
+                                    <label for="name">Your Name</label>
+                                    <input type="text" class="form-control input" name="userName" id="name"
+                                        placeholder="Ahmed mohamed" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="item mb-4 mb-md-0">
+                                <div class="input-data">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" class="form-control input" name="email" id="email"
+                                        placeholder="example@gmail.com">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="item mb-4 my-md-4">
+                                <div class="input-data">
+                                    <label for="select">Subject</label>
+                                    <select class="form-select input" id="select" aria-label="Default select example">
+                                        <option value="" selected disabled>Choose a Topic</option>
+                                        <option value="movieRecommendation">Movie Recommendation</option>
+                                        <option value="technicalIssue">Technical Issue</option>
+                                        <option value="partnership">Partnership</option>
+                                        <option value="generalQuestion">General Question</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="item">
+                                <div class="input-data">
+                                    <label for="message">Your Message</label>
+                                    <textarea class="input" name="message" id="message" maxlength="500" cols="30" rows="10"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn mt-3 btn-submit">
+                        <span class="position-relative z-3">
+                            <i class="fa-regular fa-paper-plane"></i> Send Message
+                        </span>
+                    </button>
+                    <button type="button" class="btn mt-3 btn-home" onclick="backToHome()">
+                        <span class="position-relative z-3">
+                            <i class="fa-solid fa-arrow-left"></i> Back To Home
+                        </span>
+                    </button>
+                    <div class="success-msg d-none" id="successMsg">
+                        <i class="fa-solid fa-circle-check mx-auto my-3"></i>
+                        <h3>Message Sent!</h3>
+                        <p>We'll get back to you within 24 hours.<br>In the meantime, enjoy the movies.</p>
+                        <p class="time">Back To Home in <span id="time"></span> seconds...</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../global/js/plugins/bootstrap.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,757 @@
+:root {
+  --mainColor: #E50914;
+  --secondColor: #BDF0C1;
+  --textColor-first: #000000;
+  --textColor-second: #D1D0CF;
+}
+
+.navbar {
+  position: fixed;
+  top: 10px;
+  right: initial;
+  bottom: initial;
+  left: 50%;
+  z-index: 1000;
+  width: 90%;
+  height: initial;
+  transform: translate(-50%);
+  background: linear-gradient(135deg, #0d0000 0%, #1c0606 50%, #0d0000 100%);
+  border-radius: 10px;
+}
+.navbar::before, .navbar::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  position: absolute;
+  top: initial;
+  right: initial;
+  bottom: initial;
+  left: 0;
+  z-index: initial;
+  background: linear-gradient(90deg, transparent 0%, #ff3300 30%, #ff2f00 50%, #ff3300 70%, transparent 100%);
+  animation: topline 3s ease-in-out infinite;
+}
+.navbar::before {
+  top: 0;
+}
+.navbar::after {
+  bottom: 0;
+}
+@keyframes topline {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.navbar .effect {
+  position: absolute;
+  top: 0;
+  right: initial;
+  bottom: initial;
+  left: -15%;
+  z-index: 1;
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 40, 0, 0.02), rgba(255, 40, 0, 0.05), rgba(255, 40, 0, 0.02), transparent);
+  animation: effect 4s linear infinite;
+}
+@keyframes effect {
+  0% {
+    left: -15%;
+  }
+  100% {
+    left: 115%;
+  }
+}
+.navbar .navbar-brand {
+  width: 12%;
+}
+@media (max-width: 1300px) {
+  .navbar .navbar-brand {
+    width: 40%;
+  }
+}
+@media (min-width: 576px) and (max-width: 1300px) {
+  .navbar .navbar-brand {
+    width: 30%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1300px) {
+  .navbar .navbar-brand {
+    width: 25%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1300px) {
+  .navbar .navbar-brand {
+    width: 20%;
+  }
+}
+@media (min-width: 1181px) and (max-width: 1300px) {
+  .navbar .navbar-brand {
+    width: 14%;
+  }
+}
+.navbar .navbar-toggler {
+  border: 1px solid var(--mainColor);
+  box-shadow: none;
+  width: 45px;
+  height: 40px;
+  padding: 0;
+}
+.navbar .navbar-toggler span {
+  width: 70%;
+  margin: auto;
+  height: 2px;
+  background-color: var(--mainColor);
+  display: block;
+}
+.navbar .collapse ul li {
+  font-weight: 600;
+  position: relative;
+  font-size: 18px;
+  color: var(--textColor-second);
+}
+.navbar .collapse ul li.dropdown a.dropdown-toggle i {
+  font-size: 18px;
+}
+.navbar .collapse ul li.dropdown a.dropdown-toggle::after {
+  content: initial;
+}
+.navbar .collapse ul li.dropdown a.dropdown-toggle {
+  padding: 10px;
+  border: 2px solid var(--mainColor);
+  border-radius: 10px;
+  color: var(--textColor-second);
+}
+.navbar .collapse ul li.dropdown ul {
+  background: linear-gradient(135deg, #0d0000 0%, #1c0606 50%, #0d0000 100%);
+}
+.navbar .collapse ul li.link a {
+  color: var(--textColor-second);
+}
+.navbar .collapse ul li.link a::after, .navbar .collapse ul li.link a::before {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 10px;
+  position: absolute;
+  top: initial;
+  right: initial;
+  bottom: initial;
+  left: initial;
+  z-index: initial;
+  transform: translateY(-7px) rotate(45deg);
+  transition: all 0.5s;
+  opacity: 0;
+}
+.navbar .collapse ul li.link a::before {
+  left: 0;
+  border-top: 2px solid var(--mainColor);
+  border-left: 2px solid var(--mainColor);
+}
+.navbar .collapse ul li.link a::after {
+  right: 0;
+  border-bottom: 2px solid var(--mainColor);
+  border-right: 2px solid var(--mainColor);
+}
+.navbar .collapse ul li.link a:hover, .navbar .collapse ul li.link a.active {
+  color: var(--mainColor);
+}
+.navbar .collapse ul li.link a:hover::after, .navbar .collapse ul li.link a:hover::before, .navbar .collapse ul li.link a.active::after, .navbar .collapse ul li.link a.active::before {
+  opacity: 1;
+  transform: translateY(-7px) rotate(0);
+}
+.navbar .collapse ul li i {
+  color: var(--textColor-second);
+  font-size: 25px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.navbar .collapse ul li i:hover {
+  color: var(--mainColor);
+}
+.navbar .collapse ul.icons li {
+  position: relative;
+}
+.navbar .collapse ul.icons li span i {
+  font-size: 18px;
+}
+@media (max-width: 1300px) {
+  .navbar .collapse ul.icons li.searchLi {
+    width: 100%;
+    margin-bottom: 14px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1300px) {
+  .navbar .collapse ul.icons li.searchLi {
+    width: initial;
+    margin-bottom: initial;
+  }
+}
+.navbar .collapse ul.icons li img.seaGif {
+  width: 45px !important;
+  height: 45px !important;
+  cursor: pointer;
+  transition: all 0.5s;
+  opacity: 1;
+  pointer-events: initial;
+}
+.navbar .collapse ul.icons li img.seaGif.hide {
+  transform: translateX(30px);
+  opacity: 0;
+  pointer-events: none;
+}
+.navbar .collapse ul.icons li input {
+  position: absolute;
+  top: 50%;
+  right: -500%;
+  bottom: initial;
+  left: initial;
+  z-index: initial;
+  width: 250px;
+  height: 40px;
+  transform: translateY(-50%);
+  background-color: var(--textColor-first);
+  border: 1px solid var(--mainColor);
+  box-shadow: none;
+  color: var(--textColor-second);
+  transition: all 0.5s;
+  opacity: 0;
+  pointer-events: none;
+}
+@media (min-width: 992px) and (max-width: 1300px) {
+  .navbar .collapse ul.icons li input {
+    width: 160px;
+  }
+}
+@media (min-width: 1181px) and (max-width: 1300px) {
+  .navbar .collapse ul.icons li input {
+    width: 250px;
+  }
+}
+.navbar .collapse ul.icons li input::placeholder {
+  color: var(--textColor-second);
+}
+.navbar .collapse ul.icons li input.active {
+  right: 0;
+}
+@media (max-width: 1300px) {
+  .navbar .collapse ul.icons li input.active {
+    right: 50%;
+    transform: translate(50%, -50%);
+  }
+}
+@media (min-width: 768px) and (max-width: 1300px) {
+  .navbar .collapse ul.icons li input.active {
+    right: 0;
+    transform: translateY(-50%);
+  }
+}
+.navbar .collapse ul.icons li input.active {
+  opacity: 1;
+  pointer-events: initial;
+  transition-delay: 0.2s;
+}
+.navbar .collapse ul.icons li .search-results {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  bottom: initial;
+  left: initial;
+  z-index: 999;
+  width: 250px;
+  max-height: 400px;
+  overflow-y: auto;
+  background-color: #1a1a1a;
+  border-radius: 5px;
+  display: none;
+}
+@media (max-width: 1300px) {
+  .navbar .collapse ul.icons li .search-results {
+    max-height: 200px;
+  }
+}
+@media (min-width: 576px) and (max-width: 1300px) {
+  .navbar .collapse ul.icons li .search-results {
+    max-height: 210px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1300px) {
+  .navbar .collapse ul.icons li .search-results {
+    max-height: 400px;
+  }
+}
+.navbar .collapse ul.icons li .search-results::-webkit-scrollbar {
+  width: 5px;
+}
+.navbar .collapse ul.icons li .search-results::-webkit-scrollbar-track {
+  background: transparent;
+}
+.navbar .collapse ul.icons li .search-results::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+.navbar .collapse ul.icons li .search-results::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.navbar .collapse ul.icons li .search-results.show {
+  display: block;
+}
+.navbar .collapse ul.icons li .search-results .item {
+  padding: 8px 12px;
+  cursor: pointer;
+  color: var(--textColor-second);
+}
+.navbar .collapse ul.icons li .search-results .item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.navbar .collapse ul.icons li .search-results .item img {
+  width: 60px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 3px;
+}
+@media (max-width: 1300px) {
+  .navbar .collapse ul.icons li .search-results .item img {
+    width: 40px;
+    height: 60px;
+  }
+}
+.navbar .collapse ul.icons li .search-results .no-result {
+  padding: 12px;
+  text-align: center;
+  color: #aaa;
+}
+
+.cardsMovies {
+  margin-block: 90px;
+}
+.cardsMovies .content .moviesSwiper .swiper-slide {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 300px;
+}
+.cardsMovies .content .moviesSwiper .swiper-slide img {
+  transition: all 0.5s;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.cardsMovies .content .moviesSwiper .swiper-slide .body {
+  position: absolute;
+  top: 0;
+  right: initial;
+  bottom: initial;
+  left: 0;
+  z-index: initial;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  opacity: 0;
+  transition: all 0.3s;
+}
+.cardsMovies .content .moviesSwiper .swiper-slide .body .layout {
+  color: var(--textColor-second);
+  width: 100%;
+  transform: translateY(100%);
+}
+.cardsMovies .content .moviesSwiper .swiper-slide .body .layout ul.type li {
+  background-color: rgb(47, 37, 4);
+  color: var(--textColor-second);
+  font-size: 11px;
+  padding: 5px;
+  border-radius: 5px;
+}
+@media (max-width: 1300px) {
+  .cardsMovies .content .moviesSwiper .swiper-slide .body .layout ul.type li {
+    font-size: 13px;
+  }
+}
+@media (min-width: 371px) and (max-width: 1300px) {
+  .cardsMovies .content .moviesSwiper .swiper-slide .body .layout ul.type li {
+    font-size: 12px;
+  }
+}
+.cardsMovies .content .moviesSwiper .swiper-slide .body .layout h6 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--textColor-second);
+}
+@media (min-width: 371px) and (max-width: 1300px) {
+  .cardsMovies .content .moviesSwiper .swiper-slide .body .layout h6 {
+    font-size: 14px;
+  }
+}
+.cardsMovies .content .moviesSwiper .swiper-slide .body .layout ul.cat li {
+  color: #AAAAA9;
+  font-size: 12px;
+}
+@media (max-width: 1300px) {
+  .cardsMovies .content .moviesSwiper .swiper-slide .body .layout ul.cat li {
+    font-weight: 700;
+    font-size: 11px;
+  }
+}
+.cardsMovies .content .moviesSwiper .swiper-slide .body .layout .back_drop .add_cart {
+  position: relative;
+}
+.cardsMovies .content .moviesSwiper .swiper-slide .body .layout .back_drop .add_cart .text {
+  position: absolute;
+  top: -50px;
+  right: initial;
+  bottom: initial;
+  left: 0;
+  z-index: 4;
+  font-size: 15px;
+  border-radius: 5px;
+  background-color: var(--textColor-first);
+  width: max-content;
+  padding: 8px;
+  opacity: 0;
+  transition-duration: 0.2s;
+}
+.cardsMovies .content .moviesSwiper .swiper-slide .body .layout .back_drop .add_cart img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.cardsMovies .content .moviesSwiper .swiper-slide .body .layout .back_drop .add_cart img.add {
+  transform: translateX(0);
+}
+.cardsMovies .content .moviesSwiper .swiper-slide .body .layout .back_drop .add_cart img.add.hide {
+  transform: translateX(-300%);
+}
+.cardsMovies .content .moviesSwiper .swiper-slide .body .layout .back_drop .add_cart img.delete {
+  transform: translateX(-300%);
+}
+.cardsMovies .content .moviesSwiper .swiper-slide .body .layout .back_drop .add_cart img.delete.show {
+  transform: translateX(0);
+}
+@media (min-width: 371px) and (max-width: 1300px) {
+  .cardsMovies .content .moviesSwiper .swiper-slide .body .layout .back_drop .add_cart img {
+    width: 30px;
+    height: 30px;
+  }
+}
+.cardsMovies .content .moviesSwiper .swiper-slide .body .layout .back_drop .add_cart:hover .text {
+  opacity: 1;
+}
+.cardsMovies .content .moviesSwiper .swiper-slide .body .layout .back_drop .btn {
+  border: none;
+}
+@media (min-width: 371px) and (max-width: 1300px) {
+  .cardsMovies .content .moviesSwiper .swiper-slide .body .layout .back_drop .btn {
+    font-size: 12px;
+  }
+}
+.cardsMovies .content .moviesSwiper .swiper-slide:hover img {
+  transform: scale(1.2);
+}
+.cardsMovies .content .moviesSwiper .swiper-slide:hover .body {
+  opacity: 1;
+}
+.cardsMovies .content .moviesSwiper .swiper-slide:hover .body .layout {
+  transform: translateY(0);
+  transition: all 0.5s;
+}
+
+footer {
+  background-color: #0a0a0a;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+footer .container .row img {
+  width: 120px;
+  opacity: 0.85;
+  transition: opacity 0.3s;
+}
+footer .container .row img:hover {
+  opacity: 1;
+}
+footer .container .row p {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 13px;
+}
+
+body {
+  position: relative;
+  background-color: var(--textColor-first);
+  font-family: "Roboto", sans-serif;
+}
+body::-webkit-scrollbar {
+  width: 5px;
+}
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.mainColor {
+  color: var(--mainColor);
+  font-weight: 700;
+}
+
+/* *custom scrollbar */
+html::-webkit-scrollbar {
+  width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #333435;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: var(--main-color);
+  border-radius: 15px;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  right: initial;
+  bottom: initial;
+  left: 0;
+  z-index: 10000;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.popup.active {
+  display: flex;
+}
+.popup .box {
+  width: 50%;
+  height: 400px;
+  opacity: 0;
+  transition-duration: 1s;
+}
+.popup.show .box {
+  opacity: 1;
+}
+.popup[data-name=cart] {
+  display: none;
+  height: 100%;
+  overflow-y: auto;
+}
+.popup[data-name=cart] .box {
+  margin: 20px auto;
+  transform: translateY(-200%);
+  transition: all 1s;
+  opacity: 1;
+  position: relative;
+  background-color: #17171B;
+  color: var(--textColor-second);
+  border-radius: 10px;
+  height: auto;
+}
+@media (max-width: 1300px) {
+  .popup[data-name=cart] .box {
+    width: 300px;
+  }
+}
+@media (min-width: 576px) and (max-width: 1300px) {
+  .popup[data-name=cart] .box {
+    width: 400px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1300px) {
+  .popup[data-name=cart] .box {
+    width: 500px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1300px) {
+  .popup[data-name=cart] .box {
+    width: 700px;
+  }
+}
+.popup[data-name=cart] .box .head p {
+  font-size: 25px;
+  font-weight: 600;
+}
+.popup[data-name=cart] .box .head .exit {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  bottom: initial;
+  left: initial;
+  z-index: initial;
+}
+.popup[data-name=cart] .box .head .exit i {
+  cursor: pointer;
+  color: var(--textColor-second);
+  transition: all 0.3s;
+  font-size: 25px;
+}
+.popup[data-name=cart] .box .head .exit i:hover {
+  color: var(--mainColor);
+}
+.popup[data-name=cart] .box .empty .item {
+  width: 300px;
+  height: auto;
+}
+@media (max-width: 1300px) {
+  .popup[data-name=cart] .box .empty .item {
+    width: 200px;
+  }
+  .popup[data-name=cart] .box .empty .item p {
+    font-size: 12px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1300px) {
+  .popup[data-name=cart] .box .empty .item {
+    width: 250px;
+  }
+  .popup[data-name=cart] .box .empty .item p {
+    font-size: 16px;
+  }
+}
+.popup[data-name=cart] .box .cards .item {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+  width: 100%;
+  border-radius: 10px;
+}
+@media (max-width: 1300px) {
+  .popup[data-name=cart] .box .cards .item {
+    max-width: 200px;
+    margin: auto;
+  }
+}
+.popup[data-name=cart] .box .cards .item img {
+  transition: all 0.5s;
+  object-fit: cover;
+}
+.popup[data-name=cart] .box .cards .item .body {
+  position: absolute;
+  top: 0;
+  right: initial;
+  bottom: initial;
+  left: 0;
+  z-index: initial;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: all 0.3s;
+}
+.popup[data-name=cart] .box .cards .item .body .layout .delete {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  bottom: initial;
+  left: initial;
+  z-index: initial;
+}
+.popup[data-name=cart] .box .cards .item .body .layout .delete i {
+  cursor: pointer;
+  color: var(--textColor-second);
+  transition: all 0.3s;
+  font-size: 18px;
+}
+.popup[data-name=cart] .box .cards .item .body .layout .delete i:hover {
+  color: var(--mainColor);
+}
+.popup[data-name=cart] .box .cards .item .body .layout .info h3 {
+  font-size: 18px;
+  color: var(--mainColor);
+  font-weight: 600;
+}
+.popup[data-name=cart] .box .cards .item .body .layout .info p {
+  color: #c2c2c2;
+  font-size: 12px;
+}
+.popup[data-name=cart] .box .cards .item .body .layout .info .btn {
+  border: none;
+}
+.popup[data-name=cart] .box .cards .item:hover img {
+  transform: scale(1.2);
+}
+.popup[data-name=cart] .box .cards .item:hover .body {
+  opacity: 1;
+}
+.popup[data-name=cart].active {
+  display: block;
+}
+.popup[data-name=cart].show .box {
+  transform: translateY(0%);
+}
+
+img {
+  user-select: none;
+}
+
+img.gif {
+  width: 50px;
+  height: 50px;
+  background-color: var(--mainColor);
+  border-radius: 10px;
+}
+@media (max-width: 1300px) {
+  img.gif {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.mainButton {
+  background-color: var(--mainColor);
+  color: var(--textColor-second);
+  padding: 5px 15px;
+  border-radius: 5px;
+  position: relative;
+  transition: all 0.5s;
+  overflow: hidden;
+  margin: auto;
+}
+@media (min-width: 992px) and (max-width: 1300px) {
+  .mainButton {
+    font-size: 15px;
+  }
+}
+.mainButton::after, .mainButton::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: initial;
+  bottom: initial;
+  left: initial;
+  z-index: initial;
+  background-color: #8E0E00;
+  transition: all 0.5s;
+}
+.mainButton::before {
+  left: 100%;
+}
+.mainButton::after {
+  left: -100%;
+}
+.mainButton:hover {
+  color: var(--textColor-second);
+}
+.mainButton:hover::after {
+  left: 0;
+}
+.mainButton:hover::before {
+  left: 0;
+}
+
+/*# sourceMappingURL=global.css.map */

@@ -1,0 +1,108 @@
+@use '../../../global/css/scss/shared/mixins' as *;
+
+#Login {
+    background-image: url("../../global/images/bg.png");
+    background-position: center;
+    background-size: cover;
+    height: 100dvh;
+
+    .content {
+        .logo {
+            width: 210px;
+            margin: auto;
+
+            @include responsive(350) {
+                width: 150px;
+            }
+
+            @include responsive(650) {
+                width: 180px;
+            }
+
+            @include responsive(1050) {
+                width: 200px;
+            }
+        }
+
+        .data {
+            background-color: rgb(4, 5, 4, 0.7);
+            width: 500px;
+
+            @include responsive(350) {
+                width: 300px;
+                margin: 8;
+            }
+
+            @include responsive(450) {
+                width: 350px;
+                margin: 8;
+            }
+
+            @include responsive(650) {
+                width: 450px;
+                margin: 8;
+            }
+
+            @include responsive(850) {
+                width: 500px;
+                margin: 8;
+            }
+
+            form {
+                position: relative;
+
+                label {
+                    color: var(--textColor-second);
+                    margin-bottom: 0;
+                    font-weight: 700;
+                }
+
+                input {
+                    background-color: rgb(4, 5, 4, 0.5);
+                    border: 1px solid rgb(from var(--textColor-second) r g b / 0.5);
+                    padding-block: 10px;
+                    color: #fff;
+                    box-shadow: none;
+                    font-weight: 700;
+
+                    &::placeholder {
+                        color: rgb(from var(--textColor-second) r g b / 0.3);
+                    }
+
+                    &:focus {
+                        border-color: var(--mainColor);
+                    }
+                }
+
+                .alert {
+                    padding: 10px;
+                    pointer-events: none;
+                }
+
+                button {
+                    background-color: var(--mainColor);
+                    border: 0;
+                    color: #fff;
+                    font-size: 20px;
+                    font-weight: 700;
+                }
+            }
+
+            &>p {
+                color: #fff;
+
+                @include responsive(350) {
+                    font-size: 18px;
+                }
+
+                @include responsive(450) {
+                    font-size: 15px;
+                }
+
+                span {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

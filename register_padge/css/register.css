@@ -1,0 +1,125 @@
+#Register {
+  background-image: url("../../global/images/bg.png");
+  background-position: center;
+  background-size: cover;
+  height: 100dvh;
+}
+#Register .content .logo {
+  width: 210px;
+  margin: auto;
+}
+@media (max-width: 1300px) {
+  #Register .content .logo {
+    width: 150px;
+  }
+}
+@media (min-width: 576px) and (max-width: 1300px) {
+  #Register .content .logo {
+    width: 180px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1300px) {
+  #Register .content .logo {
+    width: 200px;
+  }
+}
+#Register .content .data {
+  background-color: rgba(4, 5, 4, 0.7);
+  width: 500px;
+}
+@media (max-width: 1300px) {
+  #Register .content .data {
+    width: 300px;
+    margin: 8;
+  }
+}
+@media (min-width: 371px) and (max-width: 1300px) {
+  #Register .content .data {
+    width: 350px;
+    margin: 8;
+  }
+}
+@media (min-width: 576px) and (max-width: 1300px) {
+  #Register .content .data {
+    width: 450px;
+    margin: 8;
+  }
+}
+@media (min-width: 768px) and (max-width: 1300px) {
+  #Register .content .data {
+    width: 500px;
+    margin: 8;
+  }
+}
+#Register .content .data form .inputs label {
+  color: var(--textColor-second);
+  margin-bottom: 0;
+  font-weight: 700;
+}
+#Register .content .data form .inputs {
+  position: relative;
+}
+#Register .content .data form .inputs input {
+  background-color: rgba(4, 5, 4, 0.5);
+  border: 1px solid rgb(from var(--textColor-second) r g b/0.5);
+  padding-block: 10px;
+  color: #fff;
+  box-shadow: none;
+  font-weight: 700;
+}
+#Register .content .data form .inputs input::placeholder {
+  color: rgb(from var(--textColor-second) r g b/0.3);
+}
+#Register .content .data form .inputs input:focus {
+  border-color: var(--mainColor);
+}
+#Register .content .data form .inputs .alert {
+  position: absolute;
+  padding: 10px;
+  top: -30px;
+  right: 0;
+  pointer-events: none;
+  background-color: var(--mainColor);
+  color: #fff;
+}
+@media (max-width: 1300px) {
+  #Register .content .data form .inputs .alert {
+    right: -55px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1300px) {
+  #Register .content .data form .inputs .alert {
+    right: 0;
+  }
+}
+#Register .content .data form .inputs .alert::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 44px;
+  left: 2px;
+  border: 20px solid transparent;
+  border-top-color: var(--mainColor);
+  pointer-events: none;
+}
+#Register .content .data form button {
+  background-color: var(--mainColor);
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+}
+#Register .content .data > p {
+  color: #fff;
+  font-weight: 700;
+}
+@media (max-width: 1300px) {
+  #Register .content .data > p {
+    font-size: 15px;
+  }
+}
+#Register .content .data > p span {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=register.css.map */

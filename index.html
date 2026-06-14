@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" href="./global/images/logo.png">
+    <link rel="stylesheet" href="global/css/plugins/bootstrap.css">
+    <link rel="stylesheet" href="global/css/global.css">
+    <link rel="stylesheet" href="./login_padge/css/login.css">
+</head>
+
+<body>
+    <div id="Login">
+        <div class="container d-flex justify-content-center align-items-center h-100">
+            <div class="content">
+                <div class="data py-3 px-5 rounded-3">
+                    <div class="logo mb-2">
+                        <img src="global/images/stream_logo.png" class="img-fluid" alt="">
+                    </div>
+                    <form method="post">
+                        <div class="mb-4">
+                            <label for="exampleInputEmail1" class="form-label mb-2">Email <span
+                                    class="mainColor">*</span></label>
+                            <input placeholder="Enter Your Email" type="email" name="email" class="form-control"
+                                id="exampleInputEmail1" aria-describedby="emailHelp" required autocomplete="off">
+                        </div>
+                        <div class="mb-4">
+                            <label for="exampleInputPassword1" class="form-label mb-2">Password <span
+                                    class="mainColor">*</span></label>
+                            <input placeholder="Enter Your Password" type="password" name="password"
+                                class="form-control" id="exampleInputPassword1" required autocomplete="off">
+                        </div>
+                        <div class="alert alert-danger d-none">incorrect Email or password</div>
+                        <button type="submit" class="btn w-100 mb-3">Login</button>
+                    </form>
+                    <p class="text-center">Don’t have an account ? <a href="./register_padge/register.html"
+                            class="text-decoration-none"><span class="mainColor">Register Here</span></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./login_padge/js/loginFunction.js"></script>
+    <script src="./login_padge/js/login.js"></script>
+</body>
+
+</html>

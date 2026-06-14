@@ -1,0 +1,131 @@
+@use '../../../global/css/scss/shared/mixins' as *;
+
+#Register {
+    background-image: url("../../global/images/bg.png");
+    background-position: center;
+    background-size: cover;
+    height: 100dvh;
+
+    .content {
+        .logo {
+            width: 210px;
+            margin: auto;
+
+            @include responsive(350) {
+                width: 150px;
+            }
+
+            @include responsive(650) {
+                width: 180px;
+            }
+
+            @include responsive(1050) {
+                width: 200px;
+            }
+        }
+
+        .data {
+            background-color: rgb(4, 5, 4, 0.7);
+            width: 500px;
+
+            @include responsive(350) {
+                width: 300px;
+                margin: 8;
+            }
+
+            @include responsive(450) {
+                width: 350px;
+                margin: 8;
+            }
+
+            @include responsive(650) {
+                width: 450px;
+                margin: 8;
+            }
+
+            @include responsive(850) {
+                width: 500px;
+                margin: 8;
+            }
+
+            form {
+                .inputs {
+                    label {
+                        color: var(--textColor-second);
+                        margin-bottom: 0;
+                        font-weight: 700;
+                    }
+
+                    position: relative;
+
+                    input {
+                        background-color: rgb(4, 5, 4, 0.5);
+                        border: 1px solid rgb(from var(--textColor-second) r g b / 0.5);
+                        padding-block: 10px;
+                        color: #fff;
+                        box-shadow: none;
+                        font-weight: 700;
+
+                        &::placeholder {
+                            color: rgb(from var(--textColor-second) r g b / 0.3);
+                        }
+
+                        &:focus {
+                            border-color: var(--mainColor);
+                        }
+                    }
+
+                    .alert {
+                        position: absolute;
+                        padding: 10px;
+                        top: -30px;
+                        right: 0;
+                        pointer-events: none;
+                        background-color: var(--mainColor);
+                        color: #fff;
+
+                        @include responsive(350) {
+                            right: -55px;
+                        }
+
+                        @include responsive(1050) {
+                            right: 0;
+                        }
+
+                        &::before {
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            top: 44px;
+                            left: 2px;
+                            border: 20px solid transparent;
+                            border-top-color: var(--mainColor);
+                            pointer-events: none;
+                        }
+                    }
+                }
+
+                button {
+                    background-color: var(--mainColor);
+                    border: 0;
+                    color: #fff;
+                    font-size: 20px;
+                    font-weight: 700;
+                }
+            }
+
+            &>p {
+                color: #fff;
+                font-weight: 700;
+
+                @include responsive(350) {
+                    font-size: 15px;
+                }
+
+                span {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

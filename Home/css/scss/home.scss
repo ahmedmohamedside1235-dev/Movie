@@ -1,0 +1,402 @@
+@use "../../../global/css/scss/shared/mixins" as *;
+
+.backgrounds {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    background:
+        linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+        radial-gradient(68% 58% at 50% 50%, #c81e3a 0%, #a51d35 16%, #0a0a0a 100%);
+}
+
+#Home {
+    .swiper {
+        .swiper-slide {
+            width: 80%;
+            font-size: 18px;
+            height: 90dvh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0.5;
+            filter: blur(0.1875em);
+            transition-duration: 0.7s;
+
+            .bg_header {
+                @include position($p : absolute, $t: 0, $l : 0);
+                @include area (100%, 100%);
+            }
+
+            .content {
+                %design {
+                    transform: translateX(30px);
+                    opacity: 0;
+                }
+
+                .part1 {
+                    @include responsive(350){
+                        margin-top: 80px;
+                    }
+
+                    @include responsive(1050){
+                        margin-top: 0;
+                    }
+                    .item {
+                        h2 {
+                            font-size: 39px;
+                            color: var(--mainColor);
+                            @extend %design;
+                            font-weight: 600;
+
+                            @include responsive(350) {
+                                font-size: 25px;
+                            }
+
+                            @include responsive(650) {
+                                font-size: 30px;
+                            }
+
+                            @include responsive(1050) {
+                                font-size: 35px;
+                            }
+                        }
+
+                        .stars {
+                            color: yellow;
+                            font-size: 14px;
+                            @extend %design;
+
+                            @include responsive(350) {
+                                width: 100%;
+                            }
+
+                            @include responsive(850) {
+                                width: initial;
+                            }
+                        }
+
+                        .time {
+                            color: #AAAAA9;
+                            font-size: 14px;
+                            @extend %design;
+
+                            @include responsive(350) {
+                                font-weight: 600;
+                            }
+                        }
+
+                        .date {
+                            color: #AAAAA9;
+                            font-size: 14px;
+                            @extend %design;
+
+                            @include responsive(350) {
+                                font-weight: 600;
+                            }
+                        }
+
+                        .overview {
+                            p {
+                                color: #d1d1d1;
+                                @extend %design;
+
+                                @include responsive(350) {
+                                    font-size: 12px
+                                }
+
+                                @include responsive(850) {
+                                    font-size: 14px
+                                }
+                            }
+                        }
+                        .btn{
+                            @extend %design;
+                            border: none;
+                        }
+                    }
+                }
+
+                .part2 {
+                    .item {
+                        @extend %design;
+
+                        img {
+                            width: 40%;
+                            cursor: pointer;
+
+                            @include responsive(350) {
+                                width: 45%;
+                            }
+
+                            @include responsive(450) {
+                                width: 25%;
+                            }
+
+                            @include responsive(850) {
+                                width: 30%;
+                            }
+
+                            @include responsive(1050) {
+                                width: 40%;
+                            }
+                        }
+
+                        h4 {
+                            font-size: 30px;
+                            color: var(--mainColor);
+                            font-weight: 700;
+                            margin-bottom: 0;
+
+                            @include responsive(350) {
+                                font-size: 20px;
+                            }
+
+                            @include responsive(1050) {
+                                font-weight: 500;
+                            }
+
+                            @include responsive(1250) {
+                                font-size: 20px;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.swiper-slide-active {
+                filter: blur(0);
+                opacity: 1;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    inset-inline-start: 0;
+                    width: 90%;
+                    height: 100%;
+                    width: 100%;
+                    background: linear-gradient(90deg, rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) 15%, rgba(0, 0, 0, 0));
+                    z-index: 1;
+                }
+
+                .content {
+                    %reset {
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+
+                    .part1 {
+                        .item {
+                            h2 {
+                                @extend %reset;
+                                transition: all 1.5s .2s;
+                            }
+
+                            .stars {
+                                @extend %reset;
+                                transition: all 1s .3s;
+                            }
+
+                            .time {
+                                @extend %reset;
+                                transition: all 1s .6s;
+                            }
+
+                            .date {
+                                @extend %reset;
+                                transition: all 1s .9s;
+                            }
+
+                            .overview {
+                                p {
+                                    @extend %reset;
+                                    transition: all 1s 1.2s;
+                                }
+                            }
+
+                            .btn{
+                                @extend %reset;
+                                transition: all 1s 1.5s;
+                            }
+                        }
+                    }
+
+                    .part2 {
+                        .item {
+                            @extend %reset;
+                            transition: all 1s 1.4s;
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+        .ping {
+            height: 100%;
+            width: 100px;
+            top: 0;
+            z-index: 3;
+            transition: all .5s;
+
+            &.part1 {
+                right: -10%;
+                background: linear-gradient(270deg, rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) 15%, rgba(0, 0, 0, 0));
+            }
+
+            &.part2 {
+                left: -10%;
+                background: linear-gradient(90deg, rgba(0, 0, 0, .9), rgba(0, 0, 0, .9) 15%, rgba(0, 0, 0, 0));
+            }
+
+
+            .icon {
+                color: var(--mainColor);
+                @include flex(center, center);
+                border: 1px solid var(--mainColor);
+                border-radius: 100%;
+                transition: tranform .5s 1s, hover .5s;
+
+                &.swiper-button-prev {
+                    left: -10%;
+                }
+
+                &.swiper-button-next {
+                    right: -10%;
+                }
+
+                &:hover {
+                    background-color: var(--mainColor);
+
+                    .swiper-navigation-icon {
+                        color: var(--textColor-second);
+                    }
+                }
+
+                .swiper-navigation-icon {
+                    @include area(20px, 20px);
+                }
+            }
+        }
+    }
+
+
+
+    &:hover {
+        .swiper {
+            .ping {
+                &.part1 {
+                    right: 0;
+                }
+
+                &.part2 {
+                    left: 0;
+                }
+
+                .icon {
+                    &.swiper-button-prev {
+                        left: 20px;
+                    }
+
+                    &.swiper-button-next {
+                        right: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.cardsMovies {
+    .line-effect {
+        position: relative;
+
+        &::before {
+            @include createEle(100%, 100px);
+            border-radius: 50%;
+            border-top: 3px solid var(--mainColor);
+        }
+
+        &::after {
+            @include createEle(100%, 200px);
+            @include position($p : absolute, $t: 2px, $l: 50%);
+            pointer-events: none;
+            transform: translateX(-50%);
+            border-radius: 39%;
+            background: radial-gradient(100% 500% at 50% -420%, rgba(64, 97, 231, 0.4) 80%, rgba(0, 0, 0, 0.1) 100%);
+        }
+    }
+
+    .body {
+
+        .head {
+            h2 {
+                font-size: 30px;
+                color: var(--textColor-second);
+                font-weight: 600;
+
+                @include responsive(350) {
+                    font-size: 20px;
+                }
+            }
+        }
+
+        .see-all {
+            a {
+                color: var(--mainColor);
+                font-weight: 600;
+                font-size: 18px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .arrow {
+        height: 150px;
+        width: 30px;
+
+        @include responsive(350) {
+            display: none;
+        }
+
+        @include responsive(850) {
+            display: flex;
+        }
+
+        transform: translateY(-40%);
+        color: var(--mainColor);
+        background-color: rgba(0, 0, 0);
+        cursor: pointer;
+        transition: all .5s;
+        border-radius: 10px;
+
+        &.prev {
+            left: 0;
+        }
+
+        &.next {
+            right: 0;
+        }
+
+        &.prev.swiper-button-disabled {
+            transform: translateX(-120%);
+        }
+
+        &.next.swiper-button-disabled {
+            transform: translateX(150%);
+        }
+
+        svg {
+            width: 30px;
+            height: 30px;
+
+            @include responsive(350) {
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+}

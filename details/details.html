@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../global/images/logo.png">
+    <link rel="stylesheet" href="../global/css/all.min.css">
+    <link rel="stylesheet" href="../global/css/global.css">
+    <link rel="stylesheet" href="../global/css/plugins/bootstrap.css">
+    <link rel="stylesheet" href="./css/detalis.css">
+    <title>Details Movies</title>
+</head>
+
+<body>
+    <div class="background"></div>
+    <nav class="navbar navbar-expand-xl">
+        <div class="effect"></div>
+        <div class="container">
+            <a class="navbar-brand" href="../Home/index.html">
+                <img src="../global/images/stream_logo.png" class="img-fluid" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span></span>
+                <span class="middel my-2"></span>
+                <span></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto mb-2 mb-lg-0 d-flex justify-content-center align-items-center">
+
+                    <li class="nav-item link me-xl-3 ">
+                        <a class="nav-link p-3 " aria-current="page" href="../Home/index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item link ms-xl-3 ">
+                        <a class="nav-link p-3" href="#">Categories</a>
+                    </li>
+
+                    <li class="nav-item link ms-xl-3 ">
+                        <a class="nav-link p-3" href="../contact_us/contact.html">Contact Us</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav icons d-flex align-items-center justify-content-center flex-row flex-wrap">
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="Header" class="mb-5"></section>
+
+    <section id="MovieData"></section>
+
+    <!--* popup cart -->
+    <div class="popup" data-name="cart">
+        <div class="box py-4 px-3">
+            <div class="head mb-4">
+                <p>Cart (1)</p>
+                <div class="exit" onclick="closePopup()">
+                    <i class="fa-solid fa-delete-left"></i>
+                </div>
+            </div>
+            <div class="empty d-none justify-content-center align-items-center flex-column w-100 h-100 text-center">
+                <div class="item">
+                    <img src="../Home/images/empty-cart-img.png" class="img-fluid" alt="">
+                    <p class="mb-0 mt-4">Your bag is empty add a few items</p>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="row">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../global/js/globalFunction.js"></script>
+    <script src="../global/js/global.js"></script>
+    <script src="../global/js/plugins/bootstrap.js"></script>
+    <script src="js/detailsFunction.js"></script>
+    <script src="js/detalis.js"></script>
+</body>
+
+</html>
