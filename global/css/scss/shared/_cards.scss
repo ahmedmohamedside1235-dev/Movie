@@ -14,7 +14,6 @@
 
                 img {
                     transition: all .5s;
-                    object-fit: cover;
                     height: 100%;
                     width: 100%;
                 }
@@ -66,6 +65,10 @@
 
                                 @include responsive(350) {
                                     font-weight: 700;
+                                    font-size: 13px;
+                                }
+
+                                @include responsive(450) {
                                     font-size: 11px;
                                 }
                             }
@@ -110,8 +113,8 @@
                                     }
 
                                     @include responsive(450) {
-                                        width: 30px;
-                                        height: 30px;
+                                        width: 40px;
+                                        height: 40px;
                                     }
 
                                 }

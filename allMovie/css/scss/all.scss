@@ -1,0 +1,299 @@
+@use '../../../global/css/scss/shared/index' as *;
+
+#Header {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+
+    &::before {
+        @include createEle(100%, 100%);
+        @include position($t: 0, $l: 0, $z: 1);
+        background: linear-gradient(135deg, #1a0a2e 0%, #0a0a1e 50%, #1a0f0a 100%);
+    }
+
+    .stars {
+        @include position($t: 0, $l: 0);
+        @include area(100%, 100%);
+
+        .star {
+            @include position($t: 50%, $l: 20%, $z: 5);
+            @include area(3px, 3px);
+            background-color: var(--mainColor);
+            animation: upDown var(--duration, 4s) ease-in-out infinite var(--delay, 0s);
+            opacity: 0;
+            border-radius: 50%;
+
+            @keyframes upDown {
+                0% {
+                    opacity: 0;
+                    transform: translateY(0) scale(1);
+                }
+
+                50% {
+                    opacity: 0.4;
+                    transform: translateY(-30px) scale(1.3);
+                }
+
+                100% {
+                    opacity: 0;
+                    transform: translateY(0) scale(1);
+                }
+            }
+        }
+    }
+
+    .head {
+        font-family: 'Cinzel', serif;
+
+        .info {
+            h2 {
+                font-size: 38px;
+                color: var(--textColor-second);
+                font-weight: 600;
+                text-transform: uppercase;
+
+                @include responsive(350) {
+                    font-size: 25px;
+                }
+
+                @include responsive(650) {
+                    font-size: 30px;
+                }
+
+                span.movie {
+                    color: var(--mainColor);
+                }
+            }
+
+            &>span {
+                @include area(80px, 4px);
+                display: block;
+                background-color: var(--mainColor);
+            }
+        }
+    }
+}
+
+#Movie {
+    overflow: hidden;
+
+    .content {
+        .navbar_type {
+            overflow-x: auto;
+            scrollbar-width: none;
+
+            .links {
+                width: max-content;
+
+                .type_link {
+                    border: 1px solid #28282C;
+                    padding: 8px 20px;
+                    border-radius: 10px;
+                    color: var(--textColor-second);
+                    cursor: pointer;
+
+                    &:hover,
+                    &.active {
+                        background-color: rgba(from var(--mainColor) r g b / .2);
+                        border-color: var(--mainColor);
+                    }
+                }
+            }
+        }
+
+        .dataMovie {
+            .row {
+                .loading-card {
+                    border-radius: 12px;
+                    overflow: hidden;
+                    background: linear-gradient(90deg, #1a1a2e 25%, #252540 50%, #1a1a2e 75%);
+                    background-size: 200% 100%;
+                    animation: load 2s infinite;
+                    height: 300px;
+
+                    @include responsive(350) {
+                        max-width: 280px;
+                        margin: auto;
+                    }
+
+                    @keyframes load {
+                        0% {
+                            background-position: 200% 0;
+                        }
+
+                        100% {
+                            background-position: -200% 0;
+                        }
+                    }
+                }
+
+                .error-load {
+                    min-height: 400px;
+
+                    i {
+                        font-size: 40px;
+                        color: var(--mainColor);
+                    }
+
+                    h4 {
+                        color: var(--textColor-second);
+                        font-family: 'Cinzel', serif;
+                    }
+
+                    p {
+                        color: #888;
+                        font-size: 13px;
+                    }
+
+                    .btn {
+                        padding: 10px 24px;
+                        border: 0.5px solid var(--mainColor);
+                        border-radius: 8px;
+                        background-color: transparent;
+                        color: var(--textColor-second);
+                        font-size: 13px;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: var(--mainColor);
+                        }
+                    }
+                }
+
+                .cards {
+                    opacity: 0;
+                    transform: translateY(50px);
+                    transition: all 0.6s ease;
+
+                    &.show {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+
+                    .item {
+                        border-radius: 10px;
+                        overflow: hidden;
+                        position: relative;
+                        transition: all .3s;
+
+                        @include responsive(350) {
+                            max-width: 280px;
+                            margin: auto;
+                        }
+
+                        &::after {
+                            @include createEle(100%, 100px);
+                            @include position($b: 0, $l: 0);
+                            background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+                        }
+
+                        .data {
+
+                            .type-movie,
+                            .vote {
+                                border: 1px solid var(--mainColor);
+                                background-color: var(--textColor-first);
+                                color: var(--mainColor);
+                                padding: 4px 8px;
+                                font-size: 12px;
+                                border-radius: 5px;
+                            }
+
+                            .type-movie {
+                                @include position($t: 10px, $l: 10px);
+                            }
+
+                            .vote {
+                                @include position($t: 10px, $r: 10px);
+                                color: var(--textColor-second);
+                            }
+
+                            .info {
+                                @include position($b: 10px, $l: 10px, $z: 3);
+                                opacity: 1;
+                                transition: all .1s;
+
+                                &.hide {
+                                    opacity: 0;
+                                }
+
+                                h2 {
+                                    font-size: 13px;
+                                    font-weight: 500;
+                                    color: var(--textColor-second);
+                                    line-height: 1.3;
+                                }
+
+                                p {
+                                    font-size: 14px;
+                                    color: #888;
+                                }
+                            }
+                        }
+
+                        .layout {
+                            @include position($t: 0, $l: 0, $z: 10);
+                            @include area (100%, 100%);
+                            background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+                            opacity: 0;
+                            transition: all .5s;
+
+                            .body {
+                                h2 {
+                                    font-size: 13px;
+                                    font-weight: 500;
+                                    color: var(--textColor-second);
+                                    line-height: 1.3;
+                                }
+
+                                p {
+                                    font-size: 14px;
+                                    color: #888;
+                                }
+
+                                .buttons {
+                                    .btn {
+                                        flex: 1;
+                                        padding: 5px;
+                                        border-radius: 5px;
+                                        border: 0.5px solid var(--mainColor);
+                                        background-color: transparent;
+                                        color: var(--textColor-second);
+                                        font-size: 11px;
+                                        cursor: pointer;
+                                        transition: all 0.3s;
+                                        font-family: 'Inter', sans-serif;
+
+                                        &:hover {
+                                            background-color: var(--mainColor);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            transform: translateY(-10px);
+
+                            .data {
+                                .info {
+                                    opacity: 0;
+                                }
+                            }
+
+                            .layout {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .backHome {
+            background-color: var(--mainColor);
+            border: none;
+            color: var(--textColor-second);
+        }
+    }
+}

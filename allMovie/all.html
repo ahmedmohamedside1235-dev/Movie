@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All movie</title>
+    <link rel="icon" href="../global/images/logo.png">
+    <link rel="stylesheet" href="../global/css/plugins/bootstrap.css">
+    <link rel="stylesheet" href="../global/css/all.min.css">
+    <link rel="stylesheet" href="../global/css/global.css">
+    <link rel="stylesheet" href="../allMovie/css/all.css">
+</head>
+
+<body>
+    <div id="Header">
+        <div class="container h-100">
+            <div class="stars" id="StarsContainer"></div>
+            <div class="head position-relative z-3 h-100 d-flex align-items-end ">
+                <div class="info px-2 py-5">
+                    <h2><span id="Type">Trending</span> <span class="movie">Movie</span></h2>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Movie" class="py-5">
+        <div class="container">
+            <div class="content">
+                <div class="navbar_type d-lg-flex justify-content-center align-items-center  my-5">
+                    <div class="links d-flex justify-content-center align-items-center mb-2">
+                        <div data-name="all" class="type_link me-2 all active">All</div>
+                        <div data-name="action" class="type_link me-2 action">Action</div>
+                        <div data-name="drama" class="type_link me-2 drama">Drama</div>
+                        <div data-name="comedy" class="type_link me-2 comedy">Comedy</div>
+                        <div data-name="horror" class="type_link me-2 horror">Horror</div>
+                        <div data-name="romance" class="type_link me-2 romance">Romance</div>
+                        <div data-name="crime" class="type_link me-2 crime">Crime</div>
+                        <div data-name="scienceFiction" class="type_link sci-fi">Sci_Fi</div>
+                    </div>
+                </div>
+                <div class="dataMovie">
+                    <div class="row">
+                        
+                    </div>
+                </div>
+                <a href="../Home/index.html" class="text-decoration-none mt-4 d-block">
+                    <button class="btn backHome mainButton d-block m-auto"><span class="position-relative z-3">Back To Home</span></button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../global/js/globalFunction.js"></script>
+    <script src="../global/js/plugins/bootstrap.js"></script>
+    <script src="./js/allFunction.js"></script>
+    <script src="./js/all.js"></script>
+</body>
+
+</html>

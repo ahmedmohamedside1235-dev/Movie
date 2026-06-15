@@ -191,14 +191,15 @@
     margin-bottom: initial;
   }
 }
-.navbar .collapse ul.icons li img {
-  width: 45px;
+.navbar .collapse ul.icons li img.seaGif {
+  width: 45px !important;
+  height: 45px !important;
   cursor: pointer;
   transition: all 0.5s;
   opacity: 1;
   pointer-events: initial;
 }
-.navbar .collapse ul.icons li img.hide {
+.navbar .collapse ul.icons li img.seaGif.hide {
   transform: translateX(30px);
   opacity: 0;
   pointer-events: none;
@@ -337,7 +338,6 @@
 }
 .cardsMovies .content .moviesSwiper .swiper-slide img {
   transition: all 0.5s;
-  object-fit: cover;
   height: 100%;
   width: 100%;
 }
@@ -392,6 +392,11 @@
 @media (max-width: 1300px) {
   .cardsMovies .content .moviesSwiper .swiper-slide .body .layout ul.cat li {
     font-weight: 700;
+    font-size: 13px;
+  }
+}
+@media (min-width: 371px) and (max-width: 1300px) {
+  .cardsMovies .content .moviesSwiper .swiper-slide .body .layout ul.cat li {
     font-size: 11px;
   }
 }
@@ -433,8 +438,8 @@
 }
 @media (min-width: 371px) and (max-width: 1300px) {
   .cardsMovies .content .moviesSwiper .swiper-slide .body .layout .back_drop .add_cart img {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
   }
 }
 .cardsMovies .content .moviesSwiper .swiper-slide .body .layout .back_drop .add_cart:hover .text {
@@ -480,11 +485,8 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-.background {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), radial-gradient(68% 58% at 50% 50%, #c81e3a 0%, #a51d35 16%, #0a0a0a 100%);
+body {
+  background-color: rgb(0, 0, 0);
 }
 
 .buut {

@@ -338,7 +338,6 @@
 }
 .cardsMovies .content .moviesSwiper .swiper-slide img {
   transition: all 0.5s;
-  object-fit: cover;
   height: 100%;
   width: 100%;
 }
@@ -393,6 +392,11 @@
 @media (max-width: 1300px) {
   .cardsMovies .content .moviesSwiper .swiper-slide .body .layout ul.cat li {
     font-weight: 700;
+    font-size: 13px;
+  }
+}
+@media (min-width: 371px) and (max-width: 1300px) {
+  .cardsMovies .content .moviesSwiper .swiper-slide .body .layout ul.cat li {
     font-size: 11px;
   }
 }
@@ -434,8 +438,8 @@
 }
 @media (min-width: 371px) and (max-width: 1300px) {
   .cardsMovies .content .moviesSwiper .swiper-slide .body .layout .back_drop .add_cart img {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
   }
 }
 .cardsMovies .content .moviesSwiper .swiper-slide .body .layout .back_drop .add_cart:hover .text {

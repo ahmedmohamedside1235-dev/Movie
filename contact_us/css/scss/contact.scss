@@ -50,7 +50,7 @@ html {
     &::before {
         top: -100px;
         right: -100px;
-        background-color: #c9a84c;
+        background-color: var(--mainColor);
 
         @include responsive(350) {
             @include area(300px, 300px)
@@ -109,7 +109,7 @@ html {
 
     .head {
         .color {
-            color: #C9A84C;
+            color: var(--mainColor);
         }
 
         h2 {
@@ -162,7 +162,7 @@ html {
         &::before {
             @include createEle(100%, 2px);
             @include position($p: absolute, $t: 0, $l: 0);
-            background: linear-gradient(90deg, transparent, #c9a84c, transparent);
+            background: linear-gradient(90deg, transparent, var(--mainColor), transparent);
         }
 
         form {
@@ -182,7 +182,7 @@ html {
                     label {
                         display: block;
                         font-size: 13px;
-                        color: #c9a84c;
+                        color: var(--mainColor);
                         margin-bottom: 8px;
                         font-weight: 600;
                     }
@@ -230,7 +230,7 @@ html {
                 position: relative;
                 border-radius: 5px;
                 overflow: hidden;
-                background-color: rgba(201, 168, 76, 0.5);
+                background-color: var(--mainColor);
 
                 &.btn-submit {
                     background-color: transparent;
@@ -238,7 +238,7 @@ html {
                     &::before {
                         @include createEle(100%, 100%);
                         @include position($p: absolute, $t: 0, $l: -100%);
-                        background-color: rgba(201, 168, 76, 0.5);
+                        background-color: var(--mainColor);
                         border-radius: 5px;
                         transition: all 0.3s;
                     }
@@ -271,7 +271,7 @@ html {
 
                 i {
                     font-size: 48px;
-                    color: #c9a84c;
+                    color: var(--mainColor);
                     display: block;
                     margin-bottom: 16px;
                     animation: scaleIn 0.5s ease both;
@@ -310,7 +310,7 @@ html {
                     }
 
                     #time {
-                        color: #c9a84c;
+                        color: var(--mainColor);
                     }
 
                 }

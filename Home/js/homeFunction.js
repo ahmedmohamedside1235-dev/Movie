@@ -132,7 +132,7 @@ async function showDataMoviesInSections(genres) {
             <div class="swiper-slide">
                 <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class="img-fluid" alt="">
                 <div class="body d-flex align-items-end h-100">
-                    <div class="layout px-3 px-sm-2 py-3 px-lg-2">
+                    <div class="layout px-2 px-sm-2 py-3">
                         <ul class="list-unstyled type mb-2 d-flex align-items-center flex-wrap">
                             ${showGenresMovies(movie.genre_ids)}
                         </ul>

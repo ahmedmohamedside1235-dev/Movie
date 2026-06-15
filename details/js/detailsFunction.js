@@ -80,7 +80,7 @@ function showDataInPageDetails(detailsMovie, cast, keyVideo) {
                             <h2 class="mb-0">Overview</h2>
                         </div>
                         <div class="body">
-                            <p>${(detailsMovie.overview == '' ? 'No overview available for this movie' : detailsMovie.overview )}</p>
+                            <p>${(detailsMovie.overview == '' ? 'No overview available for this movie' : detailsMovie.overview)}</p>
                         </div>
                     </div>
                 </div>
@@ -101,8 +101,8 @@ function showDataInPageDetails(detailsMovie, cast, keyVideo) {
                     </div>
                 </div>
 
-                <div class="col-lg-12 mt-3 part3">
-                    <div class="item px-3 py-4">
+                <div class="col-lg-12  part3">
+                    <div class="item my-3 px-3 py-4">
                         <div class="row">
                             <div class="col-lg-6 part1">
                                 <div class="item px-3 py-4 mb-4 mb-lg-0">
@@ -139,7 +139,7 @@ function showDataInPageDetails(detailsMovie, cast, keyVideo) {
                                     <div
                                         class="mb-3 px-3 py-2 d-flex justify-content-between align-items-center info lang">
                                         <h5>Language</h5>
-                                        <p>${showLang(detailsMovie.languages) == '' ? 'Unknown' : showLang(detailsMovie.languages) }</p>
+                                        <p>${showLang(detailsMovie.languages) == '' ? 'Unknown' : showLang(detailsMovie.languages)}</p>
                                     </div>
                                     <div
                                         class="mb-3 px-3 py-2 d-flex justify-content-between align-items-center info release">
@@ -153,18 +153,21 @@ function showDataInPageDetails(detailsMovie, cast, keyVideo) {
                                     <div
                                         class="mb-3 px-3 py-2 d-flex justify-content-between align-items-center info runtime">
                                         <h5>Runtime</h5>
-                                        <p><span>${(objTimeMovie.hour == undefined ? '' : objTimeMovie.hour + 'h : ' )}</span><span>${objTimeMovie.minute}min</span></p>
+                                        <p><span>${(objTimeMovie.hour == undefined ? '' : objTimeMovie.hour + 'h : ')}</span><span>${objTimeMovie.minute}min</span></p>
                                     </div>
                                     <div
                                         class="px-3 py-2 d-flex justify-content-between align-items-center info runtime">
                                         <h5>Category</h5>
                                         <p>
-                                            ${(getMovieGenres(detailsMovie.genres) == '' ? 'No Genres Available' : getMovieGenres(detailsMovie.genres)) }
+                                            ${(getMovieGenres(detailsMovie.genres) == '' ? 'No Genres Available' : getMovieGenres(detailsMovie.genres))}
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <a href="../Home/index.html" class="text-decoration-none mt-4 w-100 d-block">
+                            <button class="btn backHome mainButton w-100 text-light border border-1 border-light d-block m-auto"><span class="position-relative z-3">Back To Home</span></button>
+                        </a>
                     </div>
                 </div>
             </div>

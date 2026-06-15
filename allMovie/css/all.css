@@ -477,253 +477,12 @@ footer .container .row p {
   font-size: 13px;
 }
 
-html::-webkit-scrollbar {
-  width: 5px;
-}
-html::-webkit-scrollbar-track {
-  background-color: rgb(255, 255, 255);
-}
-html::-webkit-scrollbar-thumb {
-  background: rgb(201, 168, 76);
-  border-radius: 10px;
-}
-
-#Contact {
-  background-color: #0A0A0F;
-  color: var(--textColor-second);
+#Header {
   position: relative;
+  height: 220px;
   overflow: hidden;
 }
-#Contact::before, #Contact::after {
-  content: "";
-  display: block;
-  width: 400px;
-  height: 400px;
-  position: absolute;
-  top: initial;
-  right: initial;
-  bottom: initial;
-  left: initial;
-  z-index: 5;
-  filter: blur(80px);
-  pointer-events: none;
-  animation: scaleShrink 6s ease-in-out infinite;
-}
-@keyframes scaleShrink {
-  0% {
-    opacity: 0.15;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.3;
-    transform: scale(1.2);
-  }
-  100% {
-    opacity: 0.15;
-    transform: scale(1);
-  }
-}
-#Contact::before {
-  top: -100px;
-  right: -100px;
-  background-color: var(--mainColor);
-}
-@media (max-width: 1300px) {
-  #Contact::before {
-    width: 300px;
-    height: 300px;
-  }
-}
-@media (min-width: 992px) and (max-width: 1300px) {
-  #Contact::before {
-    width: 400px;
-    height: 400px;
-  }
-}
-#Contact::after {
-  content: "";
-  display: block;
-  width: 300px;
-  height: 300px;
-  bottom: -50px;
-  left: -80px;
-  animation-delay: -3s;
-  background-color: #7c3aed;
-}
-@media (max-width: 1300px) {
-  #Contact::after {
-    width: 200px;
-    height: 200px;
-  }
-}
-@media (min-width: 992px) and (max-width: 1300px) {
-  #Contact::after {
-    width: 300px;
-    height: 300px;
-  }
-}
-#Contact .stars-bg {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-}
-#Contact .star {
-  position: absolute;
-  background: #fff;
-  border-radius: 50%;
-  animation: stars var(--duration, 3s) ease-in-out infinite var(--delay, 0s);
-}
-@keyframes stars {
-  0% {
-    opacity: 0.1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.9;
-    transform: scale(1.4);
-  }
-  100% {
-    opacity: 0.1;
-    transform: scale(1);
-  }
-}
-#Contact .head .color {
-  color: var(--mainColor);
-}
-#Contact .head h2 {
-  font-size: 70px;
-  font-family: "Cinzel", serif;
-}
-@media (max-width: 1300px) {
-  #Contact .head h2 {
-    font-size: 50px;
-  }
-}
-@media (min-width: 371px) and (max-width: 1300px) {
-  #Contact .head h2 {
-    font-size: 60px;
-  }
-}
-#Contact .head p {
-  color: #888888;
-  font-size: 15px;
-}
-@media (max-width: 1300px) {
-  #Contact .head p {
-    font-size: 12px;
-  }
-}
-@media (min-width: 371px) and (max-width: 1300px) {
-  #Contact .head p {
-    font-size: 13px;
-  }
-}
-@media (min-width: 576px) and (max-width: 1300px) {
-  #Contact .head p {
-    font-size: 15px;
-  }
-}
-#Contact .body {
-  background-color: #121217;
-  border-radius: 10px;
-  border: 0.5px solid rgba(201, 168, 76, 0.2);
-  position: relative;
-  width: 80%;
-  margin: auto;
-}
-@media (max-width: 1300px) {
-  #Contact .body {
-    width: 100%;
-    height: initial;
-  }
-}
-@media (min-width: 992px) and (max-width: 1300px) {
-  #Contact .body {
-    width: 80%;
-    height: initial;
-  }
-}
-#Contact .body::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 2px;
-  position: absolute;
-  top: 0;
-  right: initial;
-  bottom: initial;
-  left: 0;
-  z-index: initial;
-  background: linear-gradient(90deg, transparent, var(--mainColor), transparent);
-}
-#Contact .body form {
-  width: 80%;
-  margin: auto;
-}
-@media (max-width: 1300px) {
-  #Contact .body form {
-    width: 100%;
-    height: initial;
-  }
-}
-@media (min-width: 992px) and (max-width: 1300px) {
-  #Contact .body form {
-    width: 80%;
-    height: initial;
-  }
-}
-#Contact .body form .row .input-data label {
-  display: block;
-  font-size: 13px;
-  color: var(--mainColor);
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-#Contact .body form .row .input-data .input,
-#Contact .body form .row .input-data select {
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 0.5px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 14px 18px;
-  color: #fff;
-  font-family: "Inter", sans-serif;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  outline: none;
-  resize: none;
-}
-#Contact .body form .row .input-data .input:focus,
-#Contact .body form .row .input-data select:focus {
-  border-color: rgba(201, 168, 76, 0.5);
-  background-color: rgba(201, 168, 76, 0.05);
-  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.08);
-}
-#Contact .body form .row .input-data .input::placeholder,
-#Contact .body form .row .input-data select::placeholder {
-  color: #444;
-}
-#Contact .body form .row .input-data select option {
-  background: #1B1A1A;
-  color: #fff;
-  border-radius: 5px;
-}
-#Contact .body form .btn {
-  display: block;
-  width: 100%;
-  color: #fff;
-  border: 1px solid rgba(201, 168, 76, 0.2);
-  padding: 10px 15px;
-  position: relative;
-  border-radius: 5px;
-  overflow: hidden;
-  background-color: var(--mainColor);
-}
-#Contact .body form .btn.btn-submit {
-  background-color: transparent;
-}
-#Contact .body form .btn.btn-submit::before {
+#Header::before {
   content: "";
   display: block;
   width: 100%;
@@ -732,70 +491,281 @@ html::-webkit-scrollbar-thumb {
   top: 0;
   right: initial;
   bottom: initial;
-  left: -100%;
-  z-index: initial;
-  background-color: var(--mainColor);
-  border-radius: 5px;
-  transition: all 0.3s;
-}
-#Contact .body form .btn.btn-submit:hover::before {
   left: 0;
+  z-index: 1;
+  background: linear-gradient(135deg, #1a0a2e 0%, #0a0a1e 50%, #1a0f0a 100%);
 }
-#Contact .body form .success-msg {
-  text-align: center;
-  padding: 32px;
-  animation: fadeUp 0.5s ease both;
+#Header .stars {
+  position: absolute;
+  top: 0;
+  right: initial;
+  bottom: initial;
+  left: 0;
+  z-index: initial;
+  width: 100%;
+  height: 100%;
 }
-@keyframes fadeUp {
-  from {
+#Header .stars .star {
+  position: absolute;
+  top: 50%;
+  right: initial;
+  bottom: initial;
+  left: 20%;
+  z-index: 5;
+  width: 3px;
+  height: 3px;
+  background-color: var(--mainColor);
+  animation: upDown var(--duration, 4s) ease-in-out infinite var(--delay, 0s);
+  opacity: 0;
+  border-radius: 50%;
+}
+@keyframes upDown {
+  0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(0) scale(1);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  50% {
+    opacity: 0.4;
+    transform: translateY(-30px) scale(1.3);
   }
-}
-#Contact .body form .success-msg i {
-  font-size: 48px;
-  color: var(--mainColor);
-  display: block;
-  margin-bottom: 16px;
-  animation: scaleIn 0.5s ease both;
-  margin: auto;
-}
-@keyframes scaleIn {
-  from {
-    transform: scale(0);
+  100% {
     opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
-#Contact .body form .success-msg h3 {
+#Header .head {
   font-family: "Cinzel", serif;
-  color: #fff;
-  font-size: 22px;
-  margin-bottom: 8px;
 }
-#Contact .body form .success-msg p {
-  color: #888;
-  font-size: 14px;
+#Header .head .info h2 {
+  font-size: 38px;
+  color: var(--textColor-second);
+  font-weight: 600;
+  text-transform: uppercase;
 }
 @media (max-width: 1300px) {
-  #Contact .body form .success-msg p {
-    font-size: 12px;
+  #Header .head .info h2 {
+    font-size: 25px;
   }
 }
-@media (min-width: 371px) and (max-width: 1300px) {
-  #Contact .body form .success-msg p {
-    font-size: 13px;
+@media (min-width: 576px) and (max-width: 1300px) {
+  #Header .head .info h2 {
+    font-size: 30px;
   }
 }
-#Contact .body form .success-msg p #time {
+#Header .head .info h2 span.movie {
   color: var(--mainColor);
 }
+#Header .head .info > span {
+  width: 80px;
+  height: 4px;
+  display: block;
+  background-color: var(--mainColor);
+}
 
-/*# sourceMappingURL=contact.css.map */
+#Movie {
+  overflow: hidden;
+}
+#Movie .content .navbar_type {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+#Movie .content .navbar_type .links {
+  width: max-content;
+}
+#Movie .content .navbar_type .links .type_link {
+  border: 1px solid #28282C;
+  padding: 8px 20px;
+  border-radius: 10px;
+  color: var(--textColor-second);
+  cursor: pointer;
+}
+#Movie .content .navbar_type .links .type_link:hover, #Movie .content .navbar_type .links .type_link.active {
+  background-color: rgba(from var(--mainColor) r g b/0.2);
+  border-color: var(--mainColor);
+}
+#Movie .content .dataMovie .row .loading-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #1a1a2e 25%, #252540 50%, #1a1a2e 75%);
+  background-size: 200% 100%;
+  animation: load 2s infinite;
+  height: 300px;
+}
+@media (max-width: 1300px) {
+  #Movie .content .dataMovie .row .loading-card {
+    max-width: 280px;
+    margin: auto;
+  }
+}
+@keyframes load {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+#Movie .content .dataMovie .row .error-load {
+  min-height: 400px;
+}
+#Movie .content .dataMovie .row .error-load i {
+  font-size: 40px;
+  color: var(--mainColor);
+}
+#Movie .content .dataMovie .row .error-load h4 {
+  color: var(--textColor-second);
+  font-family: "Cinzel", serif;
+}
+#Movie .content .dataMovie .row .error-load p {
+  color: #888;
+  font-size: 13px;
+}
+#Movie .content .dataMovie .row .error-load .btn {
+  padding: 10px 24px;
+  border: 0.5px solid var(--mainColor);
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--textColor-second);
+  font-size: 13px;
+  cursor: pointer;
+}
+#Movie .content .dataMovie .row .error-load .btn:hover {
+  background-color: var(--mainColor);
+}
+#Movie .content .dataMovie .row .cards {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease;
+}
+#Movie .content .dataMovie .row .cards.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+#Movie .content .dataMovie .row .cards .item {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s;
+}
+@media (max-width: 1300px) {
+  #Movie .content .dataMovie .row .cards .item {
+    max-width: 280px;
+    margin: auto;
+  }
+}
+#Movie .content .dataMovie .row .cards .item::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  top: initial;
+  right: initial;
+  bottom: 0;
+  left: 0;
+  z-index: initial;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+}
+#Movie .content .dataMovie .row .cards .item .data .type-movie,
+#Movie .content .dataMovie .row .cards .item .data .vote {
+  border: 1px solid var(--mainColor);
+  background-color: var(--textColor-first);
+  color: var(--mainColor);
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 5px;
+}
+#Movie .content .dataMovie .row .cards .item .data .type-movie {
+  position: absolute;
+  top: 10px;
+  right: initial;
+  bottom: initial;
+  left: 10px;
+  z-index: initial;
+}
+#Movie .content .dataMovie .row .cards .item .data .vote {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  bottom: initial;
+  left: initial;
+  z-index: initial;
+  color: var(--textColor-second);
+}
+#Movie .content .dataMovie .row .cards .item .data .info {
+  position: absolute;
+  top: initial;
+  right: initial;
+  bottom: 10px;
+  left: 10px;
+  z-index: 3;
+  opacity: 1;
+  transition: all 0.1s;
+}
+#Movie .content .dataMovie .row .cards .item .data .info.hide {
+  opacity: 0;
+}
+#Movie .content .dataMovie .row .cards .item .data .info h2 {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--textColor-second);
+  line-height: 1.3;
+}
+#Movie .content .dataMovie .row .cards .item .data .info p {
+  font-size: 14px;
+  color: #888;
+}
+#Movie .content .dataMovie .row .cards .item .layout {
+  position: absolute;
+  top: 0;
+  right: initial;
+  bottom: initial;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
+  opacity: 0;
+  transition: all 0.5s;
+}
+#Movie .content .dataMovie .row .cards .item .layout .body h2 {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--textColor-second);
+  line-height: 1.3;
+}
+#Movie .content .dataMovie .row .cards .item .layout .body p {
+  font-size: 14px;
+  color: #888;
+}
+#Movie .content .dataMovie .row .cards .item .layout .body .buttons .btn {
+  flex: 1;
+  padding: 5px;
+  border-radius: 5px;
+  border: 0.5px solid var(--mainColor);
+  background-color: transparent;
+  color: var(--textColor-second);
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: "Inter", sans-serif;
+}
+#Movie .content .dataMovie .row .cards .item .layout .body .buttons .btn:hover {
+  background-color: var(--mainColor);
+}
+#Movie .content .dataMovie .row .cards .item:hover {
+  transform: translateY(-10px);
+}
+#Movie .content .dataMovie .row .cards .item:hover .data .info {
+  opacity: 0;
+}
+#Movie .content .dataMovie .row .cards .item:hover .layout {
+  opacity: 1;
+}
+#Movie .content .backHome {
+  background-color: var(--mainColor);
+  border: none;
+  color: var(--textColor-second);
+}
+
+/*# sourceMappingURL=all.css.map */

@@ -37,6 +37,7 @@ let GENRES = {
 
 //* type of movies
 let type = {
+    '0':'all',
     "28": "Action",
     "12": "Adventure",
     "16": "Animation",
@@ -95,7 +96,7 @@ function combineAllMovies() {
 
 //* open popup
 function openPopup(popupName, bool = false, ele = undefined) {
-    let popupEle = document.querySelector(`.popup[data-name ="${popupName}"]`),
+    let popupEle = document.querySelector(`.popup[data-name="${popupName}"]`),
         body = document.querySelector("body");
 
     //* popup video
@@ -157,7 +158,8 @@ function hideInputSearch() {
 
 //* add login in navbar
 function addUlLogin(bool) {
-    if (bool) {
+    if (window.location.pathname.includes('Home')) {
+        if (bool) {
         ulLogin.innerHTML =
             `
         <li class="nav-item d-flex align-items-center justify-content-center searchLi">
@@ -177,16 +179,16 @@ function addUlLogin(bool) {
             <ul class="dropdown-menu position-absolute dropdown-menu-start text-center">
                 <li class="nav-item d-flex align-items-center ">
                     <a class="nav-link login button-login mainButton buut" href="../index.html">
-                        <span class="position-relative z-3"><i class="fa-solid fa-right-from-bracket"></i> Logout</span>
+                    <span class="position-relative z-3"><i class="fa-solid fa-right-from-bracket"></i> Logout</span>
                     </a>
-                </li>
-            </ul>
-        </li>
-        
-        `;
-    }
-
-    else {
+                    </li>
+                    </ul>
+                    </li>
+                    
+                    `;
+                }
+                
+                else {
         ulLogin.innerHTML =
             `
         <li class="nav-item d-flex align-items-center justify-content-center searchLi">
@@ -196,13 +198,14 @@ function addUlLogin(bool) {
         </li>
         <li class="nav-item d-flex align-items-center  mb-3 mb-lg-0 mx-3" onclick='showMoviesInCart()'>
             <i class="fa-solid fa-cart-arrow-down"></i>
-        </li>
-        <li class="nav-item d-flex align-items-center mb-3 mb-lg-0 login">
+            </li>
+            <li class="nav-item d-flex align-items-center mb-3 mb-lg-0 login">
             <a class="nav-link login button-login mainButton buut" href="../index.html">
-                <span class="position-relative z-3"><i class="fa-solid fa-right-to-bracket"></i> Login</span>
+            <span class="position-relative z-3"><i class="fa-solid fa-right-to-bracket"></i> Login</span>
             </a>
-        </li>
-        `;
+            </li>
+            `;
+        }
     }
 }
 
@@ -307,17 +310,23 @@ async function addToCart(movieId, status) {
 }
 
 //* remove the movie from cart
-function removeFromCart(id, status, bool = false) {
-    let headPopup = document.querySelector(`.popup[data-name ="cart"] .box .head p`);
+function removeFromCart(id, status, bool = false, isCart = false) {
+    let headPopup = document.querySelector(`.popup[data-name="cart"] .box .head p`);
     moviesCart = moviesCart.filter((movie) => movie.id !== id);
-    headPopup.textContent = `Cart (${moviesCart.length})`;
 
     if (bool)
         status = 'btn';
 
+    if (isCart)
+        status = 'addCart';
+
+    if (status == 'btn' || status === 'icon') { 
+        headPopup.textContent = `Cart (${moviesCart.length})`;
+        checkCartEmpty();
+    }
+
     editButtonToAdd(status, id);
     updateLocalStorag();
-    checkCartEmpty();
 }
 
 //* update local storage
@@ -330,9 +339,12 @@ function chechStatusButton(bool, id) {
     if (bool === 'icon') {
         let add_carts = document.querySelectorAll(`.add_cart[data-id="${id}"]`);
         editButtonToRemove(add_carts, id, bool);
-    } else {
+    } else if (bool === 'btn') {
         let add_cart = document.querySelector(`.add_cart.button[data-id="${id}"]`);
         editButtonToRemove(add_cart, id, bool)
+    } else {
+        let add_cart = document.querySelector(`.addCart[data-id="${id}"]`);
+        editButtonToRemove(add_cart, id, bool);
     }
 }
 
@@ -395,12 +407,18 @@ function editButtonToRemove(add_carts, id, bool) {
             showIcons(iconDelete, iconAdd, true);
             text.textContent = 'Remove From Cart';
         });
-    } else {
+    } else if (bool == 'btn') {
         add_carts.setAttribute('onclick', `removeFromCart(${id},"btn")`);
         add_carts.innerHTML = `
             <span class="position-relative z-3">
                 <i class="fa-regular fa-trash-can"></i> Remove From Cart
             </span>`;
+    } else {
+        add_carts.setAttribute('onclick', `removeFromCart(${id},"addCart")`);
+        add_carts.innerHTML =
+            `
+                <i class="fa-regular fa-trash-can me-2"></i>Cart
+            `;
     }
 
 }
@@ -417,20 +435,27 @@ function editButtonToAdd(status, id) {
             showIcons(iconDelete, iconAdd, false);
             text.textContent = 'Add To Cart';
         });
-    } else {
+    } else if (status == 'btn') {
         let add_cart = document.querySelector(`.add_cart.button[data-id="${id}"]`);
         add_cart.setAttribute('onclick', `addToCart(${id},"btn")`);
         add_cart.innerHTML = `
             <span class="position-relative z-3">
                 <i class="fa-solid fa-cart-plus"></i> Add To Cart
             </span>`;
+    } else {
+        let addCart = document.querySelector(`.addCart[data-id="${id}"]`);
+        addCart.setAttribute('onclick', `addToCart(${id},"addCart")`);
+        addCart.innerHTML =
+            `
+                <i class="fa-solid fa-plus me-2"></i>Cart
+            `;
     }
 }
 
 //* show data movie in cart
 function showMoviesInCart() {
-    let contentPopup = document.querySelector(`.popup[data-name ="cart"] .box .cards .row `),
-        headPopup = document.querySelector(`.popup[data-name ="cart"] .box .head p`);
+    let contentPopup = document.querySelector(`.popup[data-name="cart"] .box .cards .row `),
+        headPopup = document.querySelector(`.popup[data-name="cart"] .box .head p`);
     headPopup.textContent = `Cart (${moviesCart.length})`
     contentPopup.innerHTML = '';
 
@@ -449,7 +474,7 @@ function showMoviesInCart() {
                     <img src="https://image.tmdb.org/t/p/w500${movie.poster}" class="img-fluid" alt="">
                     <div class="body d-flex align-items-end">
                         <div class="layout px-2 py-3 w-100">
-                            <div class="delete" onclick="removeMovie(this);removeFromCart(${movie.id}, 'icon',${isDetailsPage(movie.id)})">
+                            <div class="delete" onclick="removeMovie(this);removeFromCart(${movie.id}, 'icon',${isDetailsPage(movie.id)},${isAllMoviesPage()})">
                                 <i class="fa-solid fa-delete-left"></i>
                             </div>
                             <div class="info d-flex align-items-end w-100 h-100">
@@ -472,9 +497,9 @@ function showMoviesInCart() {
 }
 
 //* fixed title
-function editTitleMovies(title) {
+function editTitleMovies(title, num = 2) {
     let bool = title?.split(' ').length > 2;
-    return bool ? title.split(' ').slice(0, 2).join(' ') + "..." : title;
+    return bool ? title.split(' ').slice(0, num).join(' ') + "..." : title;
 }
 
 //* remove card from the cart 
@@ -487,12 +512,12 @@ function removeMovie(icon) {
 //* check if the cart is empty
 function checkCartEmpty() {
     if (moviesCart.length === 0) {
-        let emptyCart = document.querySelector('.popup[data-name ="cart"] .box .empty');
+        let emptyCart = document.querySelector('.popup[data-name="cart"] .box .empty');
         emptyCart.classList.remove('d-none');
         emptyCart.classList.add('d-flex');
         return true;
     } else {
-        let emptyCart = document.querySelector('.popup[data-name ="cart"] .box .empty');
+        let emptyCart = document.querySelector('.popup[data-name="cart"] .box .empty');
         emptyCart.classList.add('d-none');
         emptyCart.classList.remove('d-flex');
         return false;
@@ -504,6 +529,11 @@ function isDetailsPage(currentId) {
     let bool = window.location.pathname.includes("details"),
         id = parseInt(new URLSearchParams(window.location.search).get('id')) || JSON.parse(localStorage.getItem('id')) || currentId;
     return currentId === id && bool;
+}
+
+//* if the page is allMovies
+function isAllMoviesPage() {
+    return window.location.pathname.includes("allMovie");
 }
 
 //* search on query in All movie

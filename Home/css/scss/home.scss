@@ -1,12 +1,7 @@
 @use "../../../global/css/scss/shared/mixins" as *;
 
-.backgrounds {
-    position: fixed;
-    z-index: -1;
-    inset: 0;
-    background:
-        linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        radial-gradient(68% 58% at 50% 50%, #c81e3a 0%, #a51d35 16%, #0a0a0a 100%);
+.body {
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 #Home {
@@ -34,13 +29,14 @@
                 }
 
                 .part1 {
-                    @include responsive(350){
+                    @include responsive(350) {
                         margin-top: 80px;
                     }
 
-                    @include responsive(1050){
+                    @include responsive(1050) {
                         margin-top: 0;
                     }
+
                     .item {
                         h2 {
                             font-size: 39px;
@@ -109,7 +105,8 @@
                                 }
                             }
                         }
-                        .btn{
+
+                        .btn {
                             @extend %design;
                             border: none;
                         }
@@ -215,7 +212,7 @@
                                 }
                             }
 
-                            .btn{
+                            .btn {
                                 @extend %reset;
                                 transition: all 1s 1.5s;
                             }

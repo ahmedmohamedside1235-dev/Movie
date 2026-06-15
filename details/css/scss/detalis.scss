@@ -4,13 +4,8 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
-.background {
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    background:
-        linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        radial-gradient(68% 58% at 50% 50%, #c81e3a 0%, #a51d35 16%, #0a0a0a 100%);
+body {
+    background-color: rgba(0, 0, 0);
 }
 
 .buut {

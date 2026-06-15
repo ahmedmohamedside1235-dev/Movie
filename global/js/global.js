@@ -24,22 +24,26 @@ let token = localStorage.getItem("token"),
     combineAllMovies();
 })();
 
+//* check the user login or not
 if (token != "null" && token) {
     addUlLogin(true);
 } else {
     addUlLogin(false);
 }
 
+//* get movie cart from local storage
 if (localStorage.getItem("moviesCart") == null) {
     updateLocalStorag();
 } else {
     moviesCart = JSON.parse(localStorage.getItem("moviesCart"));
 }
 
+//* select element nav
 let buttonLogin = document.querySelector(".button-login"),
     searchInput = document.getElementById("search"),
     searchIcon = document.querySelector(".searchLi img");
 
+//* if the user login or logout
 buttonLogin.addEventListener("click", function () {
     if (token != "null" && token) {
         localStorage.removeItem("token");
