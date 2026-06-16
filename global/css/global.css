@@ -108,31 +108,31 @@
   background-color: var(--mainColor);
   display: block;
 }
-.navbar .collapse ul li {
+.navbar ul li {
   font-weight: 600;
   position: relative;
   font-size: 18px;
   color: var(--textColor-second);
 }
-.navbar .collapse ul li.dropdown a.dropdown-toggle i {
+.navbar ul li.dropdown a.dropdown-toggle i {
   font-size: 18px;
 }
-.navbar .collapse ul li.dropdown a.dropdown-toggle::after {
+.navbar ul li.dropdown a.dropdown-toggle::after {
   content: initial;
 }
-.navbar .collapse ul li.dropdown a.dropdown-toggle {
+.navbar ul li.dropdown a.dropdown-toggle {
   padding: 10px;
   border: 2px solid var(--mainColor);
   border-radius: 10px;
   color: var(--textColor-second);
 }
-.navbar .collapse ul li.dropdown ul {
+.navbar ul li.dropdown ul {
   background: linear-gradient(135deg, #0d0000 0%, #1c0606 50%, #0d0000 100%);
 }
-.navbar .collapse ul li.link a {
+.navbar ul li.link a {
   color: var(--textColor-second);
 }
-.navbar .collapse ul li.link a::after, .navbar .collapse ul li.link a::before {
+.navbar ul li.link a::after, .navbar ul li.link a::before {
   content: "";
   display: block;
   width: 15px;
@@ -147,64 +147,64 @@
   transition: all 0.5s;
   opacity: 0;
 }
-.navbar .collapse ul li.link a::before {
+.navbar ul li.link a::before {
   left: 0;
   border-top: 2px solid var(--mainColor);
   border-left: 2px solid var(--mainColor);
 }
-.navbar .collapse ul li.link a::after {
+.navbar ul li.link a::after {
   right: 0;
   border-bottom: 2px solid var(--mainColor);
   border-right: 2px solid var(--mainColor);
 }
-.navbar .collapse ul li.link a:hover, .navbar .collapse ul li.link a.active {
+.navbar ul li.link a:hover, .navbar ul li.link a.active {
   color: var(--mainColor);
 }
-.navbar .collapse ul li.link a:hover::after, .navbar .collapse ul li.link a:hover::before, .navbar .collapse ul li.link a.active::after, .navbar .collapse ul li.link a.active::before {
+.navbar ul li.link a:hover::after, .navbar ul li.link a:hover::before, .navbar ul li.link a.active::after, .navbar ul li.link a.active::before {
   opacity: 1;
   transform: translateY(-7px) rotate(0);
 }
-.navbar .collapse ul li i {
+.navbar ul li i {
   color: var(--textColor-second);
   font-size: 25px;
   cursor: pointer;
   transition: all 0.3s;
 }
-.navbar .collapse ul li i:hover {
+.navbar ul li i:hover {
   color: var(--mainColor);
 }
-.navbar .collapse ul.icons li {
+.navbar ul.icons li {
   position: relative;
 }
-.navbar .collapse ul.icons li span i {
+.navbar ul.icons li span i {
   font-size: 18px;
 }
 @media (max-width: 1300px) {
-  .navbar .collapse ul.icons li.searchLi {
+  .navbar ul.icons li.searchLi {
     width: 100%;
     margin-bottom: 14px;
   }
 }
 @media (min-width: 768px) and (max-width: 1300px) {
-  .navbar .collapse ul.icons li.searchLi {
+  .navbar ul.icons li.searchLi {
     width: initial;
     margin-bottom: initial;
   }
 }
-.navbar .collapse ul.icons li img.seaGif {
-  width: 45px !important;
-  height: 45px !important;
+.navbar ul.icons li img.seaGif {
+  width: 45px;
+  height: 45px;
   cursor: pointer;
   transition: all 0.5s;
   opacity: 1;
   pointer-events: initial;
 }
-.navbar .collapse ul.icons li img.seaGif.hide {
+.navbar ul.icons li img.seaGif.hide {
   transform: translateX(30px);
   opacity: 0;
   pointer-events: none;
 }
-.navbar .collapse ul.icons li input {
+.navbar ul.icons li input {
   position: absolute;
   top: 50%;
   right: -500%;
@@ -223,39 +223,39 @@
   pointer-events: none;
 }
 @media (min-width: 992px) and (max-width: 1300px) {
-  .navbar .collapse ul.icons li input {
+  .navbar ul.icons li input {
     width: 160px;
   }
 }
 @media (min-width: 1181px) and (max-width: 1300px) {
-  .navbar .collapse ul.icons li input {
+  .navbar ul.icons li input {
     width: 250px;
   }
 }
-.navbar .collapse ul.icons li input::placeholder {
+.navbar ul.icons li input::placeholder {
   color: var(--textColor-second);
 }
-.navbar .collapse ul.icons li input.active {
+.navbar ul.icons li input.active {
   right: 0;
 }
 @media (max-width: 1300px) {
-  .navbar .collapse ul.icons li input.active {
+  .navbar ul.icons li input.active {
     right: 50%;
     transform: translate(50%, -50%);
   }
 }
 @media (min-width: 768px) and (max-width: 1300px) {
-  .navbar .collapse ul.icons li input.active {
+  .navbar ul.icons li input.active {
     right: 0;
     transform: translateY(-50%);
   }
 }
-.navbar .collapse ul.icons li input.active {
+.navbar ul.icons li input.active {
   opacity: 1;
   pointer-events: initial;
   transition-delay: 0.2s;
 }
-.navbar .collapse ul.icons li .search-results {
+.navbar ul.icons li .search-results {
   position: absolute;
   top: 100%;
   right: 0;
@@ -270,45 +270,45 @@
   display: none;
 }
 @media (max-width: 1300px) {
-  .navbar .collapse ul.icons li .search-results {
+  .navbar ul.icons li .search-results {
     max-height: 200px;
   }
 }
 @media (min-width: 576px) and (max-width: 1300px) {
-  .navbar .collapse ul.icons li .search-results {
+  .navbar ul.icons li .search-results {
     max-height: 210px;
   }
 }
 @media (min-width: 992px) and (max-width: 1300px) {
-  .navbar .collapse ul.icons li .search-results {
+  .navbar ul.icons li .search-results {
     max-height: 400px;
   }
 }
-.navbar .collapse ul.icons li .search-results::-webkit-scrollbar {
+.navbar ul.icons li .search-results::-webkit-scrollbar {
   width: 5px;
 }
-.navbar .collapse ul.icons li .search-results::-webkit-scrollbar-track {
+.navbar ul.icons li .search-results::-webkit-scrollbar-track {
   background: transparent;
 }
-.navbar .collapse ul.icons li .search-results::-webkit-scrollbar-thumb {
+.navbar ul.icons li .search-results::-webkit-scrollbar-thumb {
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 10px;
 }
-.navbar .collapse ul.icons li .search-results::-webkit-scrollbar-thumb:hover {
+.navbar ul.icons li .search-results::-webkit-scrollbar-thumb:hover {
   background-color: rgba(255, 255, 255, 0.4);
 }
-.navbar .collapse ul.icons li .search-results.show {
+.navbar ul.icons li .search-results.show {
   display: block;
 }
-.navbar .collapse ul.icons li .search-results .item {
+.navbar ul.icons li .search-results .item {
   padding: 8px 12px;
   cursor: pointer;
   color: var(--textColor-second);
 }
-.navbar .collapse ul.icons li .search-results .item:hover {
+.navbar ul.icons li .search-results .item:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
-.navbar .collapse ul.icons li .search-results .item img {
+.navbar ul.icons li .search-results .item img {
   width: 60px;
   height: 80px;
   object-fit: cover;
@@ -316,12 +316,12 @@
   border-radius: 3px;
 }
 @media (max-width: 1300px) {
-  .navbar .collapse ul.icons li .search-results .item img {
+  .navbar ul.icons li .search-results .item img {
     width: 40px;
     height: 60px;
   }
 }
-.navbar .collapse ul.icons li .search-results .no-result {
+.navbar ul.icons li .search-results .no-result {
   padding: 12px;
   text-align: center;
   color: #aaa;
@@ -417,6 +417,7 @@
   padding: 8px;
   opacity: 0;
   transition-duration: 0.2s;
+  pointer-events: none;
 }
 .cardsMovies .content .moviesSwiper .swiper-slide .body .layout .back_drop .add_cart img {
   width: 40px;
@@ -479,6 +480,232 @@ footer .container .row img:hover {
 footer .container .row p {
   color: rgba(255, 255, 255, 0.4);
   font-size: 13px;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  right: initial;
+  bottom: initial;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background-color: var(--textColor-first);
+  pointer-events: all;
+  transition: all 0.5s;
+}
+.loading.hide {
+  pointer-events: none;
+  opacity: 0;
+}
+.loading .color {
+  color: var(--mainColor);
+}
+.loading .content {
+  position: relative;
+  height: 100%;
+}
+.loading .content .line_left,
+.loading .content .line_right {
+  position: absolute;
+  top: -60px;
+  right: initial;
+  bottom: initial;
+  left: initial;
+  z-index: 1;
+  width: 2px;
+  height: 280px;
+  background: linear-gradient(to bottom, rgba(200, 169, 110, 0.4), transparent);
+  transform-origin: top center;
+}
+.loading .content .line_left {
+  left: 30%;
+  animation: line 5s -1s ease-in-out infinite;
+}
+.loading .content .line_right {
+  right: 30%;
+  animation: line 5s -3s ease-in-out infinite reverse;
+}
+@keyframes line {
+  0%, 100% {
+    transform: rotate(-18deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: rotate(18deg);
+    opacity: 1;
+  }
+}
+.loading .content .curtain {
+  position: absolute;
+  top: 0;
+  right: initial;
+  bottom: initial;
+  left: initial;
+  z-index: 2;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, #1a0005, #3d0010);
+  animation: curtainOpen 1.8s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+}
+.loading .content .curtain.curtain_left {
+  left: 0;
+  transform-origin: left center;
+}
+.loading .content .curtain.curtain_right {
+  right: 0;
+  transform-origin: right center;
+  animation-name: curtainOpenRight;
+}
+@keyframes curtainOpen {
+  to {
+    transform: scaleX(0);
+  }
+}
+@keyframes curtainOpenRight {
+  to {
+    transform: scaleX(0);
+  }
+}
+.loading .content .stars-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.loading .content .stars-bg .star {
+  position: absolute;
+  background: #fff;
+  border-radius: 50%;
+  animation: stars var(--duration, 3s) ease-in-out infinite var(--delay, 0s);
+}
+@keyframes stars {
+  0% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.4);
+  }
+  100% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+}
+.loading .content .body .layout {
+  animation: fadeUp 0.8s 1s both;
+  margin: auto;
+  color: var(--textColor-second);
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.loading .content .body .layout img {
+  width: 100px;
+  height: 100px;
+}
+.loading .content .body .layout i {
+  font-size: 40px;
+}
+.loading .content .body .layout h2 {
+  font-size: 50px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--mainColor);
+}
+.loading .content .body .layout .load {
+  position: relative;
+  width: 250px;
+  background-color: rgba(153, 153, 153, 0.6);
+  border-radius: 2px;
+}
+.loading .content .body .layout .load .load-line {
+  display: block;
+  height: 4px;
+  background: linear-gradient(to right, var(--mainColor), #c8a96e);
+  border-radius: 2px;
+  width: 50%;
+  transition: width 0.1s linear;
+}
+.loading .content .body .layout .load .rate {
+  position: absolute;
+  top: initial;
+  right: 0;
+  bottom: 10px;
+  left: initial;
+  z-index: initial;
+  color: #c8a96e;
+}
+.loading .content .body .layout .load .rate .loa {
+  color: rgba(153, 153, 153, 0.6);
+}
+.loading .content .body .layout .lines {
+  width: 250px;
+}
+.loading .content .body .layout .lines .lines-load {
+  background-color: rgba(153, 153, 153, 0.6);
+  flex-basis: 20%;
+  height: 4px;
+  border-radius: 2px;
+}
+.loading .content .body .layout .success-info {
+  opacity: 0;
+  transition: all 1s;
+  transform: translateY(60px);
+}
+.loading .content .body .layout .success-info.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+.loading .content .body .layout .success-info .successful {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #c8a96e, transparent);
+  margin: 10px auto;
+}
+.loading .content .body .layout .success-info .success-main {
+  font-size: 42px;
+  letter-spacing: 8px;
+  color: #c8a96e;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-shadow: 0 0 30px rgba(200, 169, 110, 0.4);
+  animation: showHide 3s ease-in-out infinite;
+}
+@media (max-width: 1300px) {
+  .loading .content .body .layout .success-info .success-main {
+    font-size: 21px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1300px) {
+  .loading .content .body .layout .success-info .success-main {
+    font-size: 30px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1300px) {
+  .loading .content .body .layout .success-info .success-main {
+    font-size: 42px;
+  }
+}
+@keyframes showHide {
+  0% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.4);
+  }
+  100% {
+    filter: brightness(1);
+  }
 }
 
 body {

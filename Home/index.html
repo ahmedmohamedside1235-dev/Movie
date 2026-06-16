@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/home.css">
 </head>
 
-<body>
+<body class="overflow-hidden">
     <!-- *Navigation Bar -->
     <nav class="navbar navbar-expand-lg">
         <div class="effect"></div>
@@ -237,7 +237,7 @@
             </div>
             <div class="cards">
                 <div class="row">
-                    
+
                 </div>
             </div>
         </div>
@@ -258,12 +258,49 @@
         </div>
     </footer>
 
+    <div class="loading overflow-hidden" id="LoadingPage">
+        <div class="content">
+            <div class="line_left"></div>
+            <div class="line_right"></div>
+            <div class="curtain_left curtain"></div>
+            <div class="curtain_right curtain"></div>
+            <div class="stars-bg" id="starsContainer"></div>
+            <div class="body h-100 w-100 d-flex justify-content-center align-items-center">
+                <div class="layout d-flex justify-content-center align-items-center flex-column">
+                    <img src="../global/images/clapperboard.gif" class="img-fluid mb-4" alt="">
+                    <h2>Streamit</h2>
+                    <p class="mb-5">Your World of Cinema</p>
+                    <div class="load mb-2">
+                        <span class="load-line"></span>
+                        <span class="rate w-100 d-flex justify-content-between">
+                            <span class="d-block loa">Loading</span>
+                            <span class="color">50%</span>
+                        </span>
+                    </div>
+                    <div class="lines mb-5 d-flex justify-content-center align-items-center">
+                        <div class="lines-load me-1 line_20"></div>
+                        <div class="lines-load me-1 line_40"></div>
+                        <div class="lines-load me-1 line_60"></div>
+                        <div class="lines-load me-1 line_80"></div>
+                        <div class="lines-load line_100"></div>
+                    </div>
+                    <div class="success-info text-center" id="successReveal">
+                        <div class="success-top successful"></div>
+                        <div class="success-main">Lights . Camera . Action</div>
+                        <div class="success-sub">Welcome to the experience</div>
+                        <div class="success-buttom successful"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="js/plugins/swiper.js"></script>
     <script src="../global/js/plugins/bootstrap.js"></script>
     <script src="../global/js/globalFunction.js"></script>
-    <script src="js/homeFunction.js"></script>
     <script src="../global/js/global.js"></script>
-    <script src="js/home.js"></script> 
+    <script src="js/homeFunction.js"></script>
+    <script src="js/home.js"></script>
 
 </body>
 

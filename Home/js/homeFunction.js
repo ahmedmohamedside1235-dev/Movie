@@ -27,7 +27,7 @@ async function showMoviesInHeader(Movies) {
                                         <div class="time me-2 mx-md-3  d-flex justify-content-center align-items-center">
                                             <div class="item d-flex justify-content-center align-items-center">
                                                 <i class="fa-regular fa-clock me-1"></i>
-                                                <p class="mb-0"><span>${(objTimeMovie.hour == undefined ? '' : objTimeMovie.hour + 'h : ')}</span><span>${objTimeMovie.minute}min</span></p>
+                                                <p class="mb-0">${(objTimeMovie.hour == undefined && objTimeMovie.minute == 0 ? 'Not avaliable' : (objTimeMovie.minute != 0 && objTimeMovie.hour == undefined) ? `${objTimeMovie.minute}min` : `<span>${(objTimeMovie.hour + 'h : ')}</span><span>${objTimeMovie.minute}min</span>`)}</p>
                                             </div>
                                         </div>
                                         <div class="date">
@@ -139,7 +139,7 @@ async function showDataMoviesInSections(genres) {
                         <h6>${editTitleMovies(movie.title)}</h6>
                         <ul class="list-unstyled cat d-flex align-items-center flex-row">
                             <li class="time me-2">
-                                <i class="fa-regular fa-clock"></i><span>${(moviesTime.hour == undefined ? '' : moviesTime.hour + 'h : ')}</span><span>${moviesTime.minute}min</span>
+                                <i class="fa-regular fa-clock"></i>${(moviesTime.hour == undefined && moviesTime.minute == 0 ? 'Not avaliable' : (moviesTime.minute != 0 && moviesTime.hour == undefined) ? `${moviesTime.minute}min` : `<span>${(moviesTime.hour + 'h : ')}</span><span>${moviesTime.minute}min</span>`)}
                             </li>
                             <li class="date">
                                 <i class="fa-regular fa-calendar-days"></i><span>${moviesDate.month}</span> <span>${moviesDate.year}</span>

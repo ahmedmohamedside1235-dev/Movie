@@ -37,7 +37,7 @@ let GENRES = {
 
 //* type of movies
 let type = {
-    '0':'all',
+    '0': 'all',
     "28": "Action",
     "12": "Adventure",
     "16": "Animation",
@@ -160,8 +160,8 @@ function hideInputSearch() {
 function addUlLogin(bool) {
     if (window.location.pathname.includes('Home')) {
         if (bool) {
-        ulLogin.innerHTML =
-            `
+            ulLogin.innerHTML =
+                `
         <li class="nav-item d-flex align-items-center justify-content-center searchLi">
             <img src="../global/images/magnifying-glass.gif"  style="width: 45px; height: 45px;" class='img-fluid seaGif' onclick="showInputSearch(this)" alt="">
             <input type="text" name="search" autocomplete="off" id="search" class="form-control" placeholder="Search...">
@@ -186,11 +186,11 @@ function addUlLogin(bool) {
                     </li>
                     
                     `;
-                }
-                
-                else {
-        ulLogin.innerHTML =
-            `
+        }
+
+        else {
+            ulLogin.innerHTML =
+                `
         <li class="nav-item d-flex align-items-center justify-content-center searchLi">
             <img src="../global/images/magnifying-glass.gif"  style="width: 45px; height: 45px;"  class='img-fluid seaGif' onclick="showInputSearch(this)" alt="">
             <input type="text" autocomplete="off" name="search" id="search" class="form-control" placeholder="Search...">
@@ -320,7 +320,7 @@ function removeFromCart(id, status, bool = false, isCart = false) {
     if (isCart)
         status = 'addCart';
 
-    if (status == 'btn' || status === 'icon') { 
+    if (status == 'btn' || status === 'icon') {
         headPopup.textContent = `Cart (${moviesCart.length})`;
         checkCartEmpty();
     }
@@ -481,7 +481,7 @@ function showMoviesInCart() {
                                 <div class="content w-100">
                                     <h3>${editTitleMovies(movie.title)}</h3>
                                     <p class='mb-2'>
-                                        <span class="me-2"><i class="fa-regular fa-clock"></i>${(objTimeMovie.hour == undefined ? '' : objTimeMovie.hour + 'h : ')}${objTimeMovie.minute}min</span>
+                                        <span class="me-2"><i class="fa-regular fa-clock"></i>${(objTimeMovie.hour == undefined && objTimeMovie.minute == 0 ? 'Not avaliable' : (objTimeMovie.minute != 0 && objTimeMovie.hour == undefined) ? `${objTimeMovie.minute}min` : `<span>${(objTimeMovie.hour + 'h : ')}</span><span>${objTimeMovie.minute}min</span>`)}</span>
                                         <span><i class="fa-regular fa-calendar-days"></i>${obiDateMovie.month} ${obiDateMovie.year}</span>
                                     </p>
                                     ${isDetailsPage(movie.id) ? '' : `<button onclick = 'showDetailsMovie(${movie.id})' class="btn buut mainButton mx-auto mt-2 d-block"><span class="position-relative z-3">View detalis</span></button>`}
@@ -613,3 +613,38 @@ function showSearchResults(movies) {
     resultsBox.classList.add('show');
 }
 
+//* add color for load line 
+function addColorLoad(width, color) {
+    lines.forEach((line, i) => {
+        if (width >= (i + 1) * 20) {
+            line.style.background = color;
+        }
+    });
+}
+
+let width = 0;
+function animate() {
+    if (width >= 90) {
+        width += 0.3;
+    } else {
+        width += .8;
+    }
+    addColorLoad(width, '#E50914');
+    rate.textContent = Math.floor(width) + "%";
+    fillLoad.style.width = width + '%';
+    if (width >= 100) {
+        lines.forEach(line => line.style.background = '#c8a96e');
+        done.textContent = 'Done';
+        succesfulMessage.classList.add('show');
+        hideLoadingPadge();
+        return;
+    }
+    requestAnimationFrame(animate);
+}
+
+function hideLoadingPadge() {
+    setTimeout(() => {
+        document.querySelector('body').classList.remove('overflow-hidden');
+        loadingPadge.classList.add('hide');
+    }, 2500);
+}

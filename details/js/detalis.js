@@ -1,1 +1,0 @@
-let moviesCart = JSON.parse(localStorage.getItem('moviesCart')) ?? [];

@@ -1,0 +1,252 @@
+@use '../shared/mixins' as *;
+@use '../shared/root' as *;
+
+
+.loading {
+    @include position($p: fixed, $t: 0, $l: 0, $z: 1000);
+    @include area(100%, 100%);
+    background-color: var(--textColor-first);
+    pointer-events: all;
+    transition: all .5s;
+
+    &.hide {
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    .color {
+        color: var(--mainColor);
+    }
+
+    .content {
+        position: relative;
+        height: 100%;
+
+        .line_left,
+        .line_right {
+            @include position($p: absolute, $t: -60px, $z: 1);
+            width: 2px;
+            height: 280px;
+            background: linear-gradient(to bottom, rgba(200, 169, 110, 0.4), transparent);
+            transform-origin: top center;
+        }
+
+        .line_left {
+            left: 30%;
+            animation: line 5s -1s ease-in-out infinite;
+        }
+
+        .line_right {
+            right: 30%;
+            animation: line 5s -3s ease-in-out infinite reverse;
+        }
+
+        @keyframes line {
+
+            0%,
+            100% {
+                transform: rotate(-18deg);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: rotate(18deg);
+                opacity: 1;
+            }
+        }
+
+
+        .curtain {
+            @include position($p: absolute, $t: 0, $z: 2);
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, #1a0005, #3d0010);
+            animation: curtainOpen 1.8s cubic-bezier(.77, 0, .18, 1) forwards;
+
+            &.curtain_left {
+                left: 0;
+                transform-origin: left center;
+            }
+
+            &.curtain_right {
+                right: 0;
+                transform-origin: right center;
+                animation-name: curtainOpenRight;
+            }
+
+            @keyframes curtainOpen {
+                to {
+                    transform: scaleX(0);
+                }
+            }
+
+            @keyframes curtainOpenRight {
+                to {
+                    transform: scaleX(0);
+                }
+            }
+        }
+
+        .stars-bg {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            
+            .star {
+                position: absolute;
+                background: #fff;
+                border-radius: 50%;
+                animation: stars var(--duration, 3s) ease-in-out infinite var(--delay, 0s);
+            }
+
+            @keyframes stars {
+                0% {
+                    opacity: 0.1;
+                    transform: scale(1);
+                }
+
+                50% {
+                    opacity: 0.9;
+                    transform: scale(1.4);
+                }
+
+                100% {
+                    opacity: 0.1;
+                    transform: scale(1);
+                }
+            }
+        }
+
+        .body {
+            .layout {
+                animation: fadeUp 0.8s 1s both;
+                margin: auto;
+                color: var(--textColor-second);
+
+                @keyframes fadeUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(50px);
+                    }
+
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+
+                img {
+                    width: 100px;
+                    height: 100px;
+                }
+
+                i {
+                    font-size: 40px;
+                }
+
+                h2 {
+                    font-size: 50px;
+                    letter-spacing: 1.5px;
+                    text-transform: uppercase;
+                    color: var(--mainColor);
+                }
+
+                .load {
+                    position: relative;
+                    width: 250px;
+                    background-color: #9999;
+                    border-radius: 2px;
+
+                    .load-line {
+                        display: block;
+                        height: 4px;
+                        background: linear-gradient(to right, var(--mainColor), #c8a96e);
+                        border-radius: 2px;
+                        width: 50%;
+                        transition: width 0.1s linear;
+                    }
+
+                    .rate {
+                        @include position($b: 10px, $r: 0);
+                        color: #c8a96e;
+
+                        .loa {
+                            color: #9999;
+                        }
+                    }
+
+                }
+
+                .lines {
+                    width: 250px;
+
+                    .lines-load {
+                        background-color: #9999;
+                        flex-basis: 20%;
+                        height: 4px;
+                        border-radius: 2px;
+                    }
+                }
+
+                .success-info {
+                    opacity: 0;
+                    transition: all 1s;
+                    transform: translateY(60px);
+
+                    &.show {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+
+                    .successful {
+                        width: 60px;
+                        height: 1px;
+                        background: linear-gradient(to right, transparent, #c8a96e, transparent);
+                        margin: 10px auto;
+                    }
+
+                    .success-main {
+                        font-size: 42px;
+                        letter-spacing: 8px;
+                        color: #c8a96e;
+                        text-transform: uppercase;
+                        font-weight: 400;
+                        text-shadow: 0 0 30px rgba(200, 169, 110, 0.4);
+                        animation: showHide 3s ease-in-out infinite;
+
+                        @include responsive(350) {
+                            font-size: 21px;
+                        }
+
+                        @include responsive(850) {
+                            font-size: 30px;
+                        }
+
+                        @include responsive(1050) {
+                            font-size: 42px;
+                        }
+
+
+                        @keyframes showHide {
+                            0% {
+                                filter: brightness(1);
+                            }
+
+                            50% {
+                                filter: brightness(1.4);
+                            }
+
+                            100% {
+                                filter: brightness(1);
+                            }
+
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}

@@ -1,7 +1,4 @@
-let token = localStorage.getItem("token"),
-    ulLogin = document.querySelector(".navbar-nav.icons"),
-    userName = new URLSearchParams(window.location.search).get('userName')?.split('%20').join(' ') || localStorage.getItem('userName') || 'User',
-    moviesCart = [],
+let moviesCart = [],
     popups = document.querySelectorAll(`.popup`),
     dataMovies = {
         trending: [],
@@ -10,7 +7,33 @@ let token = localStorage.getItem("token"),
         nowPlaying: [],
         upcoming: []
     },
-    allMovies = [];
+    allMovies = [],
+    starsContainer = document.getElementById('starsContainer'),
+    loadingPadge = document.querySelector('#LoadingPage'),
+    fillLoad = document.querySelector('#LoadingPage .content .layout .load-line'),
+    rate = document.querySelector('#LoadingPage .content .layout .load .color'),
+    done = document.querySelector('#LoadingPage .content .layout .load .loa'),
+    lines = document.querySelectorAll('.lines-load'),
+    succesfulMessage = document.querySelector('#LoadingPage .content .layout .success-info');
+
+
+//* show stars
+for (let i = 0; i < 200; i++) {
+    let star = document.createElement('div');
+    star.className = 'star';
+
+    let size = Math.random() * 2.5 + 0.5;
+
+    star.style.cssText = `
+        width:  ${size}px;
+        height: ${size}px;
+        left:   ${Math.random() * 100}%;
+        top:    ${Math.random() * 100}%;  
+        --duration:     ${2 + Math.random() * 4}s;
+        --delay: -${Math.random() * 4}s;  
+    `;
+    starsContainer.appendChild(star);
+}
 
 
 (async function () {
@@ -24,44 +47,12 @@ let token = localStorage.getItem("token"),
     combineAllMovies();
 })();
 
-//* check the user login or not
-if (token != "null" && token) {
-    addUlLogin(true);
-} else {
-    addUlLogin(false);
-}
-
 //* get movie cart from local storage
 if (localStorage.getItem("moviesCart") == null) {
     updateLocalStorag();
 } else {
     moviesCart = JSON.parse(localStorage.getItem("moviesCart"));
 }
-
-//* select element nav
-let buttonLogin = document.querySelector(".button-login"),
-    searchInput = document.getElementById("search"),
-    searchIcon = document.querySelector(".searchLi img");
-
-//* if the user login or logout
-buttonLogin.addEventListener("click", function () {
-    if (token != "null" && token) {
-        localStorage.removeItem("token");
-    }
-    window.location.href = "./index.html";
-});
-
-document.addEventListener("click", function (e) {
-    hideInputSearch();
-});
-
-searchInput.addEventListener('click', function (e) {
-    e.stopPropagation();
-});
-
-searchIcon.addEventListener('click', function (e) {
-    e.stopPropagation();
-});
 
 popups.forEach((popup) => {
     popup.addEventListener("click", closePopup);
@@ -75,16 +66,6 @@ document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
         closePopup();
     }
-});
-
-//* send query for the function after enter data 
-let searchTimeout;
-searchInput.addEventListener('input', (e) => {
-    clearTimeout(searchTimeout);
-    let query = e.target.value;
-    searchTimeout = setTimeout(() => {
-        searchMovies(query);
-    }, 400);
 });
 
 document.addEventListener('click', (e) => {
