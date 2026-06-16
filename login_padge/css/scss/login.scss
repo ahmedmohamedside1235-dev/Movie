@@ -77,6 +77,14 @@
                 .alert {
                     padding: 10px;
                     pointer-events: none;
+                    text-align: center;
+                    @include responsive(350){
+                        font-size: 14px;
+                    }
+
+                    @include responsive(450){
+                        font-size: initial;
+                    }
                 }
 
                 button {

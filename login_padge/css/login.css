@@ -76,6 +76,17 @@
 #Login .content .data form .alert {
   padding: 10px;
   pointer-events: none;
+  text-align: center;
+}
+@media (max-width: 1300px) {
+  #Login .content .data form .alert {
+    font-size: 14px;
+  }
+}
+@media (min-width: 371px) and (max-width: 1300px) {
+  #Login .content .data form .alert {
+    font-size: initial;
+  }
 }
 #Login .content .data form button {
   background-color: var(--mainColor);

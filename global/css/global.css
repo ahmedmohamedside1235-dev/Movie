@@ -544,6 +544,24 @@ html::-webkit-scrollbar-thumb {
   opacity: 0;
   transition-duration: 1s;
 }
+@media (max-width: 1300px) {
+  .popup .box {
+    width: 280px;
+    height: 200px;
+  }
+}
+@media (min-width: 371px) and (max-width: 1300px) {
+  .popup .box {
+    width: 350px;
+    height: 300px;
+  }
+}
+@media (min-width: 576px) and (max-width: 1300px) {
+  .popup .box {
+    width: 450px;
+    height: 350px;
+  }
+}
 .popup.show .box {
   opacity: 1;
 }

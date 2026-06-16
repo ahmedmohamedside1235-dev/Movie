@@ -68,6 +68,21 @@ html {
         height: 400px;
         opacity: 0;
         transition-duration: 1s;
+
+        @include responsive(350) {
+            width: 280px;
+            height: 200px;
+        }
+
+        @include responsive(450) {
+            width: 350px;
+            height: 300px;
+        }
+
+        @include responsive(650) {
+            width: 450px;
+            height: 350px;
+        }
     }
 
     &.show {

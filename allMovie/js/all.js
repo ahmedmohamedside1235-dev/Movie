@@ -17,7 +17,7 @@ let observer = new IntersectionObserver((entries) => {
 });
 
 //* show stars
-for (let i = 0; i < 30; i++) {
+for (let i = 0; i < 60; i++) {
     let star = document.createElement('div');
     star.className = 'star';
     let size = Math.random() * 4 + 2;
