@@ -242,6 +242,12 @@ function showDetailsMovie(movieId) {
     window.location.href = `../details/details.html?id=${movieId}`;
 }
 
+//* go to details page
+function showDetailsMovieForHomePadge(movieId) {
+    localStorage.setItem('id', `${movieId}`);
+    window.location.href = `./details/details.html?id=${movieId}`;
+}
+
 //* show rate star
 function showRateStare(rate) {
     let rateStare = rate / 2,
@@ -484,7 +490,7 @@ function showMoviesInCart() {
                                         <span class="me-2"><i class="fa-regular fa-clock"></i>${(objTimeMovie.hour == undefined && objTimeMovie.minute == 0 ? 'Not avaliable' : (objTimeMovie.minute != 0 && objTimeMovie.hour == undefined) ? `${objTimeMovie.minute}min` : `<span>${(objTimeMovie.hour + 'h : ')}</span><span>${objTimeMovie.minute}min</span>`)}</span>
                                         <span><i class="fa-regular fa-calendar-days"></i>${obiDateMovie.month} ${obiDateMovie.year}</span>
                                     </p>
-                                    ${isDetailsPage(movie.id) ? '' : `<button onclick = 'showDetailsMovie(${movie.id})' class="btn buut mainButton mx-auto mt-2 d-block"><span class="position-relative z-3">View detalis</span></button>`}
+                                    ${isDetailsPage(movie.id) ? '' : `<button onclick = 'showDetailsMovieForHomePadge(${movie.id})' class="btn buut mainButton mx-auto mt-2 d-block"><span class="position-relative z-3">View detalis</span></button>`}
                                 </div>
                             </div>
                         </div>

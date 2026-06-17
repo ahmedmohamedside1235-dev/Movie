@@ -41,7 +41,7 @@ async function showMoviesInHeader(Movies) {
                                     <div class="overview">
                                         <p>${sliceDescription(detailsMovie.overview)}...</p>
                                     </div>
-                                    <button onclick = 'showDetailsMovie(${movie.id})' class="btn mainButton mx-0 mt-2"><span class="position-relative z-3">View detalis</span></button>
+                                    <button onclick = 'showDetailsMovieForHomePadge(${movie.id})' class="btn mainButton mx-0 mt-2"><span class="position-relative z-3">View detalis</span></button>
                                 </div>
                             </div>
                             <div class="col-lg-5 part2  d-flex justify-content-center align-items-center movie">
@@ -147,7 +147,7 @@ async function showDataMoviesInSections(genres) {
                         </ul>
                         <div class="back_drop d-flex justify-content-center w-100">
                             ${showBtn(movie.id)}
-                            <button onclick = 'showDetailsMovie(${movie.id})' class="btn mainButton mx-0"><span class="position-relative z-3">View detalis</span></button>
+                            <button onclick = 'showDetailsMovieForHomePadge(${movie.id})' class="btn mainButton mx-0"><span class="position-relative z-3">View detalis</span></button>
                         </div>
                     </div>
                 </div>

@@ -633,7 +633,7 @@ footer .container .row p {
   height: 4px;
   background: linear-gradient(to right, var(--mainColor), #c8a96e);
   border-radius: 2px;
-  width: 50%;
+  width: 0%;
   transition: width 0.1s linear;
 }
 .loading .content .body .layout .load .rate {
