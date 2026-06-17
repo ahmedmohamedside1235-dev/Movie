@@ -327,7 +327,7 @@ function removeFromCart(id, status, bool = false, isCart = false) {
         status = 'addCart';
 
     if (status == 'btn' || status === 'icon') {
-        headPopup.textContent = `Cart (${moviesCart.length})`;
+        headPopup.textContent = `Watchlist (${moviesCart.length})`;
         checkCartEmpty();
     }
 
@@ -462,7 +462,7 @@ function editButtonToAdd(status, id) {
 function showMoviesInCart() {
     let contentPopup = document.querySelector(`.popup[data-name="cart"] .box .cards .row `),
         headPopup = document.querySelector(`.popup[data-name="cart"] .box .head p`);
-    headPopup.textContent = `Cart (${moviesCart.length})`
+    headPopup.textContent = `Watchlist (${moviesCart.length})`
     contentPopup.innerHTML = '';
 
     if (checkCartEmpty()) {
