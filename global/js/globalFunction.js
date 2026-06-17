@@ -239,7 +239,7 @@ async function getDetailsMovies(id) {
 //* go to details page
 function showDetailsMovie(movieId) {
     localStorage.setItem('id', `${movieId}`);
-    window.location.href = `./details/details.html?id=${movieId}`;
+    window.location.href = `../details/details.html?id=${movieId}`;
 }
 
 //* show rate star
