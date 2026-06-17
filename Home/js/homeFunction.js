@@ -46,7 +46,7 @@ async function showMoviesInHeader(Movies) {
                             </div>
                             <div class="col-lg-5 part2  d-flex justify-content-center align-items-center movie">
                                 <div class="item  d-flex justify-content-center align-items-center">
-                                    <img src="images/plug-and-play.gif" onclick = "openPopup('video',true,this)" class="img-fluid"  data-video-key = "${keyVideo}" alt="">
+                                    <img src="./Home/images/plug-and-play.gif" onclick = "openPopup('video',true,this)" class="img-fluid"  data-video-key = "${keyVideo}" alt="">
                                     <h4> Watch Trailer </h4>
                                 </div>
                             </div>

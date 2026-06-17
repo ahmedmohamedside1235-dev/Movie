@@ -17,7 +17,7 @@ let form = document.querySelector("#Login form"),
 })();
 
 if (token) {
-    window.location.href = "./Home/index.html";
+    window.location.href = "../index.html";
 }
 
 form.addEventListener("submit", function (e) {

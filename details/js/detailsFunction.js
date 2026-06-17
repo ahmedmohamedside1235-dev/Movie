@@ -148,8 +148,8 @@ function showDataInPageDetails(detailsMovie, cast, keyVideo) {
                                 </div>
                             </div>
                         </div>
-                        <a href="../Home/index.html" class="text-decoration-none mt-4 w-100 d-block">
-                            <button class="btn backHome mainButton w-100 text-light border border-1 border-light d-block m-auto"><span class="position-relative z-3">Back To Home</span></button>
+                        <a href="../index.html" class="text-decoration-none mt-4 w-100 d-block">
+                            <button class="btn backHome mainButton text-light border border-1 border-light d-block m-auto"><span class="position-relative z-3">Back To Home</span></button>
                         </a>
                     </div>
                 </div>

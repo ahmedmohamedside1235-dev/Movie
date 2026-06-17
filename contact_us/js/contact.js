@@ -74,11 +74,11 @@ function submitForm() {
 
         if (count <= 0) {
             clearInterval(timer);
-            window.location.href = '../Home/index.html';
+            window.location.href = '../index.html';
         }
     }, 1000);
 }
 
 function backToHome() {
-    window.location.href = '../Home/index.html';
+    window.location.href = '../index.html';
 }

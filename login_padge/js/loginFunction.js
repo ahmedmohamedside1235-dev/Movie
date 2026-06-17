@@ -7,5 +7,5 @@ function loginSuccess(userName) {
     let token = "user_" + Date.now();
     localStorage.setItem("token", token);
     localStorage.setItem("userName", userName);
-    window.location.href = `./Home/index.html?userName=${userName}`;
+    window.location.href = `../index.html?userName=${userName}`;
 }

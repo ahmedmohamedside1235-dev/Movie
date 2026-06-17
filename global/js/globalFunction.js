@@ -158,12 +158,12 @@ function hideInputSearch() {
 
 //* add login in navbar
 function addUlLogin(bool) {
-    if (window.location.pathname.includes('Home')) {
-        if (bool) {
-            ulLogin.innerHTML =
-                `
+
+    if (bool) {
+        ulLogin.innerHTML =
+            `
         <li class="nav-item d-flex align-items-center justify-content-center searchLi">
-            <img src="../global/images/magnifying-glass.gif"  style="width: 45px; height: 45px;" class='img-fluid seaGif' onclick="showInputSearch(this)" alt="">
+            <img src="./global/images/magnifying-glass.gif" class='img-fluid seaGif' onclick="showInputSearch(this)" alt="">
             <input type="text" name="search" autocomplete="off" id="search" class="form-control" placeholder="Search...">
             <div class="search-results"></div>
         </li>
@@ -178,35 +178,35 @@ function addUlLogin(bool) {
             </a>
             <ul class="dropdown-menu position-absolute dropdown-menu-start text-center">
                 <li class="nav-item d-flex align-items-center ">
-                    <a class="nav-link login button-login mainButton buut" href="../index.html">
-                    <span class="position-relative z-3"><i class="fa-solid fa-right-from-bracket"></i> Logout</span>
+                    <a class="nav-link login button-login mainButton buut" href="./login_padge/index.html">
+                        <span class="position-relative z-3"><i class="fa-solid fa-right-from-bracket"></i> Logout</span>
                     </a>
-                    </li>
-                    </ul>
-                    </li>
+                </li>
+            </ul>
+        </li>
                     
                     `;
-        }
+    }
 
-        else {
-            ulLogin.innerHTML =
-                `
+    else {
+        ulLogin.innerHTML =
+            `
         <li class="nav-item d-flex align-items-center justify-content-center searchLi">
-            <img src="../global/images/magnifying-glass.gif"  style="width: 45px; height: 45px;"  class='img-fluid seaGif' onclick="showInputSearch(this)" alt="">
+            <img src="./global/images/magnifying-glass.gif"  class='img-fluid seaGif' onclick="showInputSearch(this)" alt="">
             <input type="text" autocomplete="off" name="search" id="search" class="form-control" placeholder="Search...">
             <div class="search-results"></div>
         </li>
         <li class="nav-item d-flex align-items-center  mb-3 mb-lg-0 mx-3" onclick='showMoviesInCart()'>
             <i class="fa-solid fa-cart-arrow-down"></i>
-            </li>
-            <li class="nav-item d-flex align-items-center mb-3 mb-lg-0 login">
-            <a class="nav-link login button-login mainButton buut" href="../index.html">
-            <span class="position-relative z-3"><i class="fa-solid fa-right-to-bracket"></i> Login</span>
+        </li>
+        <li class="nav-item d-flex align-items-center mb-3 mb-lg-0 login">
+            <a class="nav-link login button-login mainButton buut" href="./login_padge/index.html">
+                <span class="position-relative z-3"><i class="fa-solid fa-right-to-bracket"></i> Login</span>
             </a>
-            </li>
+        </li>
             `;
-        }
     }
+
 }
 
 //* get key video
@@ -239,7 +239,7 @@ async function getDetailsMovies(id) {
 //* go to details page
 function showDetailsMovie(movieId) {
     localStorage.setItem('id', `${movieId}`);
-    window.location.href = `../details/details.html?id=${movieId}`;
+    window.location.href = `./details/details.html?id=${movieId}`;
 }
 
 //* show rate star
@@ -381,15 +381,15 @@ function showBtn(id) {
     let bool = checkBtnAddedCart(id);
     if (!bool) {
         return `<div class="add_cart me-2 d-flex align-items-center" data-id="${id}" data-name="icon" onclick='addToCart(${id},"icon")'>
-                    <img src="images/plus.gif" class="img-fluid add" alt="">
-                    <img src="images/multiply.gif" class="img-fluid delete d-none" alt="">
+                    <img src="./Home/images/plus.gif" class="img-fluid add" alt="">
+                    <img src="./Home/images/multiply.gif" class="img-fluid delete d-none" alt="">
                     <div class="text">Add To Cart</div>
                 </div>
         `
     } else {
         return `<div class="add_cart me-2 d-flex align-items-center" data-id="${id}" onclick="removeFromCart(${id},'icon')" data-name="icon" >
-                    <img src="images/plus.gif" class="img-fluid add hide d-none" alt="">
-                    <img src="images/multiply.gif" class="img-fluid delete show" alt="">
+                    <img src="./Home/images/plus.gif" class="img-fluid add hide d-none" alt="">
+                    <img src="./Home/images/multiply.gif" class="img-fluid delete show" alt="">
                     <div class="text">Remove From Cart</div>
                 </div>
         `
