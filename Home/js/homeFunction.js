@@ -59,6 +59,7 @@ async function showMoviesInHeader(Movies) {
     initSwiper();
 }
 
+//* init sweper after the header is render
 function initSwiper() {
     let swiper = new Swiper(".mySwiper", {
         loop: true,
@@ -73,6 +74,7 @@ function initSwiper() {
     });
 }
 
+//* init swiper after the card is render
 function initSwiperSection(element) {
     const moviesSwiper = new Swiper(element, {
         slidesPerView: 5,
@@ -107,6 +109,7 @@ function sliceDescription(des) {
     return des.split(" ").slice(0, 30).join(" ");
 }
 
+//* show movie card
 async function showDataMoviesInSections(genres) {
     let contentSection = document.querySelector(`.cardsMovies[data-name="${genres}"] .content .swiper-wrapper`),
         swiperElement = document.querySelector(`.cardsMovies[data-name="${genres}"] .moviesSwiper`),
@@ -158,6 +161,7 @@ async function showDataMoviesInSections(genres) {
     initSwiperSection(swiperElement);
 }
 
+//* show all genres for movie
 function showGenresMovies(genres) {
     let contentGenres = '';
     genres.forEach((genre) => {

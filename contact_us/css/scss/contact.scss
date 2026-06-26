@@ -10,7 +10,7 @@ html {
     }
 
     &::-webkit-scrollbar-thumb {
-        background: rgba(201, 168, 76);
+        background: var(--mainColor);
         border-radius: 10px;
     }
 }
@@ -20,6 +20,7 @@ html {
     color: var(--textColor-second);
     position: relative;
     overflow: hidden;
+    height: 100%;
 
     &::before,
     &::after {

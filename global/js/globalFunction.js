@@ -628,6 +628,7 @@ function addColorLoad(width, color) {
     });
 }
 
+//* increase width for load line
 let width = 0;
 function animate() {
     if (width >= 90) {
@@ -648,6 +649,7 @@ function animate() {
     requestAnimationFrame(animate);
 }
 
+//* hide loading page after the content is loaded
 function hideLoadingPadge() {
     setTimeout(() => {
         document.querySelector('body').classList.remove('overflow-hidden');

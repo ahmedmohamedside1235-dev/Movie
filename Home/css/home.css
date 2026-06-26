@@ -231,6 +231,16 @@
   width: 20px;
   height: 20px;
 }
+@media (max-width: 1300px) {
+  #Home:hover .swiper .ping {
+    pointer-events: none;
+  }
+}
+@media (min-width: 992px) and (max-width: 1300px) {
+  #Home:hover .swiper .ping {
+    pointer-events: initial;
+  }
+}
 #Home:hover .swiper .ping.part1 {
   right: 0;
 }

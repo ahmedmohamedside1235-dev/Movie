@@ -158,7 +158,7 @@ function showDataInPageDetails(detailsMovie, cast, keyVideo) {
         `
 }
 
-
+//* show all cast movie
 function showCastMovie(casts) {
     let contentCast = '';
 
@@ -184,6 +184,7 @@ function showCastMovie(casts) {
     return contentCast;
 }
 
+//* cut the name of cast
 function editNameCast(castName) {
     let strArr = castName.split(' ').slice(0, 2),
         summaryName = '';
@@ -193,6 +194,7 @@ function editNameCast(castName) {
     return summaryName
 }
 
+//* show all language for movie
 function showLang(lang) {
     let language = '';
     if (lang.length == 1) {
@@ -209,6 +211,7 @@ function showLang(lang) {
     return language;
 }
 
+//* get all genres for movie 
 function getMovieGenres(genres) {
     let html = '';
     genres.forEach((genre, index) => {
@@ -217,6 +220,7 @@ function getMovieGenres(genres) {
     return html;
 }
 
+//* show button after check is founded in cart or not
 function showButtonInDetails(id) {
     if (!checkBtnAddedCart(id))
         return `<button data-id="${id}" onclick="addToCart(${id},'btn')" class="btn add_cart button mainButton">
